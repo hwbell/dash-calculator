@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calculator renders correctly 1`] = `
+<div
+  class="calculator"
+>
+  <h1>
+    
+  </h1>
+   
+  <div
+    class="calculator-buttons"
+  >
+    <div>
+      <button
+        class="calculator-button btn btn-secondary"
+      >
+        
+        (
+      
+      </button>
+      <button
+        class="calculator-button btn btn-secondary"
+      >
+        
+        )
+      
+      </button>
+      <button
+        class="calculator-button btn btn-secondary"
+      >
+        
+        %
+      
+      </button>
+      <button
+        class="calculator-button btn btn-secondary"
+      >
+        
+        AC
+      
+      </button>
+    </div>
+    <div>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        7
+      
+      </button>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        8
+      
+      </button>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        9
+      
+      </button>
+      <button
+        class="calculator-button btn btn-secondary"
+      >
+        
+        /
+      
+      </button>
+    </div>
+    <div>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        4
+      
+      </button>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        5
+      
+      </button>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        6
+      
+      </button>
+      <button
+        class="calculator-button btn btn-secondary"
+      >
+        
+        X
+      
+      </button>
+    </div>
+    <div>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        1
+      
+      </button>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        2
+      
+      </button>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        3
+      
+      </button>
+      <button
+        class="calculator-button btn btn-secondary"
+      >
+        
+        -
+      
+      </button>
+    </div>
+    <div>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        0
+      
+      </button>
+      <button
+        class="calculator-button btn btn-light"
+      >
+        
+        .
+      
+      </button>
+      <button
+        class="calculator-button btn btn-primary"
+      >
+        
+        =
+      
+      </button>
+      <button
+        class="calculator-button btn btn-secondary"
+      >
+        
+        +
+      
+      </button>
+    </div>
+  </div>
+</div>
+`;
