@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpressionWindow renders correctly 1`] = `
+<div
+  class="expression-window"
+>
+  <div
+    class="expression-text"
+  >
+    4*3-2 
+  </div>
+   
+  <!---->
+</div>
+`;

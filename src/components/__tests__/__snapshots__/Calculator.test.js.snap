@@ -4,9 +4,21 @@ exports[`Calculator renders correctly 1`] = `
 <div
   class="calculator"
 >
-  <h1>
+  <h3>
     
-  </h1>
+  </h3>
+   
+  <div
+    class="expression-window"
+  >
+    <div
+      class="expression-text"
+    >
+       
+    </div>
+     
+    <!---->
+  </div>
    
   <div
     class="calculator-buttons"
@@ -16,28 +28,28 @@ exports[`Calculator renders correctly 1`] = `
         class="calculator-button btn btn-secondary"
       >
         
-        (
+         (
       
       </button>
       <button
         class="calculator-button btn btn-secondary"
       >
         
-        )
+        ) 
       
       </button>
       <button
         class="calculator-button btn btn-secondary"
       >
         
-        %
+         % 
       
       </button>
       <button
         class="calculator-button btn btn-secondary"
       >
         
-        AC
+        CE
       
       </button>
     </div>
@@ -67,7 +79,7 @@ exports[`Calculator renders correctly 1`] = `
         class="calculator-button btn btn-secondary"
       >
         
-        /
+         / 
       
       </button>
     </div>
@@ -97,7 +109,7 @@ exports[`Calculator renders correctly 1`] = `
         class="calculator-button btn btn-secondary"
       >
         
-        X
+         x 
       
       </button>
     </div>
@@ -127,7 +139,7 @@ exports[`Calculator renders correctly 1`] = `
         class="calculator-button btn btn-secondary"
       >
         
-        -
+         - 
       
       </button>
     </div>
@@ -157,7 +169,7 @@ exports[`Calculator renders correctly 1`] = `
         class="calculator-button btn btn-secondary"
       >
         
-        +
+         + 
       
       </button>
     </div>
