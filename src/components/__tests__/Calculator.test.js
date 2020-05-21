@@ -24,6 +24,9 @@ describe('Calculator', () => {
     expect(button).toBeTruthy();
     expect(button.text()).toBe('=')
     
+  })
 
+  test(`should register the button's value with the state`, () => {
+    
   })
 })

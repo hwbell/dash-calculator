@@ -159,6 +159,9 @@ export default {
         // add a space for chopping above
         this.currentExpressionText.push(button.text);
         this.currentExpressionMath.push(button.math);
+        if (this.currentAnswer != null) {
+          this.currentAnswer = null;
+        }
       }
     },
     evaluateExpression: function() {
@@ -187,16 +190,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-  margin: 40px;
+  margin: 2 0px;
 }
 .calculator {
+  margin: 60px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .calculator-buttons {
-  width: 80%;
+  min-width: 420px;
 }
 .calculator-button {
   padding: 10px;

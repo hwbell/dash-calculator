@@ -47,22 +47,4 @@ export default {
   color: red; 
 }
 
-/* h3 {
-  margin: 40px 0 0;
-}
-.calculator {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.calculator-buttons {
-  width: 80%;
-}
-.calculator-button {
-  padding: 10px;
-  width: 100px;
-  border-radius: 0;
-  border: 1px solid rgb(255, 255, 255); */
-/* } */
 </style>
