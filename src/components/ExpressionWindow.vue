@@ -31,7 +31,8 @@ export default {
   justify-content: center;
   align-items: flex-end;
   border-radius: 4px;
-  border: 2px solid grey;
+  border: 2px solid white;
+  background: white;
 }
 .answer-text {
   color: blue;

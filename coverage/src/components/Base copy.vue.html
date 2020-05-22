@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/App.vue</title>
+    <title>Code coverage report for src/components/Base copy.vue</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> App.vue</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> Base copy.vue</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -37,9 +37,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
@@ -106,14 +106,7 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,25 +124,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,58 +156,52 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-  &lt;div id="app"&gt;
-    &lt;div id="content"&gt;
-      &lt;div class="space-all-row"&gt;
-        &lt;div id="time-display"&gt;
-          &lt;TimeDisplay v-bind:showTime="true" /&gt;
-          &lt;TimeConverter /&gt;
-          
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=""&gt;
-        &lt;div class=""&gt;&lt;Calculator msg="Calculator" /&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+  &lt;div class="base-component"&gt;
+    {{ message }}
   &lt;/div&gt;
 &lt;/template&gt;
 &nbsp;
 &lt;script&gt;
-<span class="cstat-no" title="statement not covered" >import Calculator from "./components/Calculator.vue";</span>
-<span class="cstat-no" title="statement not covered" >import TimeDisplay from "./components/TimeDisplay.vue";</span>
-<span class="cstat-no" title="statement not covered" >import TimeConverter from "./components/TimeConverter.vue";</span>
+&nbsp;
+// import ExpressionWindow from './ExpressionWindow';
 &nbsp;
 export default {
-  name: "App",
-  components: {
-    Calculator,
-    TimeDisplay,
-    TimeConverter
+  name: "Base",
+  // props: {
+    // msg: String,
+  // },
+  // components: {ExpressionWindow},
+<span class="fstat-no" title="function not covered" >  data: function() {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      message: 'This is a base component for us to start with!',
+    };
+  },
+  computed: {
+    // a computed getter
+<span class="fstat-no" title="function not covered" >    reversedMessage: function () {</span>
+      // `this` points to the vm instance
+<span class="cstat-no" title="statement not covered" >      return this.message.split('').reverse().join('')</span>
+    }
+  },
+  methods: {
+<span class="fstat-no" title="function not covered" >    greet: function () {</span>
+      // `this` inside methods point to the Vue instance
+<span class="cstat-no" title="statement not covered" >      this.message = "Nice to meet you!";</span>
+    }
   },
 };
 &lt;/script&gt;
 &nbsp;
-&lt;style&gt;
-#app {
-  width: 100%;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
-}
-#content {
+&lt;!-- Add "scoped" attribute to limit CSS to this component only --&gt;
+&lt;style scoped&gt;
+h3 {
   margin: 40px;
-  /* padding: 40px; */
-  min-height: 100vh;
-&nbsp;
-  border-radius: 6px;
-  /* background-color:rgba(255, 255, 255, 0.719); */
-  box-shadow: -2px 2px 12px 0px rgba(71, 70, 71, 0.514);
 }
-#time-display {
-  width: 100%;
-  margin: 20px;
+.base-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 &lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
@@ -229,17 +211,17 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri May 22 2020 16:40:01 GMT-0600 (Mountain Daylight Time)
+                at Fri May 22 2020 16:38:44 GMT-0600 (Mountain Daylight Time)
             </div>
         </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     

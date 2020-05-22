@@ -64,7 +64,7 @@ export default {
 }
 .app-title {
   font-size: 18pt;
-  color: grey;
+  color: white;
 }
 .time-hours {
   color: rgb(55, 0, 255);

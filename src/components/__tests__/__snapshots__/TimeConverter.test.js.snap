@@ -2,22 +2,117 @@
 
 exports[`TimeConverter renders correctly 1`] = `
 <div
-  class="time-converter-component"
+  class="time-converter-component left-all-col"
 >
   <div
     id="current-unix-time"
   >
-    
-    {{}}
-  
+    <span>
+      <strong>
+        Unix Timestamp:
+      </strong>
+       
+      <input
+        type="text"
+      />
+    </span>
   </div>
    
   <div
-    id="current-verbal-time"
+    id="current-verbal-time left-all-row"
   >
-    
-    {{}}
-  
+    <p
+      style="font-size: 16pt;"
+    >
+      <strong>
+        Regular Time & Date:
+      </strong>
+    </p>
+     
+    <div>
+      <div
+        class="row"
+      >
+        <div
+          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+        >
+          <p>
+            Month
+          </p>
+           
+          <input
+            class="time-input"
+            name="Month"
+            type="text"
+          />
+        </div>
+        <div
+          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+        >
+          <p>
+            Day
+          </p>
+           
+          <input
+            class="time-input"
+            name="Day"
+            type="text"
+          />
+        </div>
+        <div
+          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+        >
+          <p>
+            Year
+          </p>
+           
+          <input
+            class="time-input"
+            name="Year"
+            type="text"
+          />
+        </div>
+        <div
+          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+        >
+          <p>
+            Hour
+          </p>
+           
+          <input
+            class="time-input"
+            name="Hour"
+            type="text"
+          />
+        </div>
+        <div
+          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+        >
+          <p>
+            Minute
+          </p>
+           
+          <input
+            class="time-input"
+            name="Minute"
+            type="text"
+          />
+        </div>
+        <div
+          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+        >
+          <p>
+            Second
+          </p>
+           
+          <input
+            class="time-input"
+            name="Second"
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

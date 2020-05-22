@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Base renders correctly 1`] = `
+<div
+  class="base-component"
+>
+  
+  This is a base component for us to start with!
+
+</div>
+`;
