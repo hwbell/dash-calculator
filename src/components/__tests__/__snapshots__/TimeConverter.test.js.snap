@@ -2,26 +2,33 @@
 
 exports[`TimeConverter renders correctly 1`] = `
 <div
-  class="time-converter-component left-all-col"
+  class="time-converter-component top-left-all-col"
 >
   <div
+    class="top-left-all-row row"
     id="current-unix-time"
   >
-    <span>
+    <div
+      class="col-sm-4"
+      style="padding: 0px;"
+    >
       <strong>
         Unix Timestamp:
       </strong>
-       
-      <input
-        type="text"
-      />
-    </span>
+    </div>
+     
+    <input
+      class="unix-time-input col-sm-8"
+      type="text"
+    />
   </div>
    
   <div
-    id="current-verbal-time left-all-row"
+    class="top-left-all-row row"
+    id="current-verbal-time"
   >
     <p
+      class="col-sm-4"
       style="font-size: 16pt;"
     >
       <strong>
@@ -29,9 +36,12 @@ exports[`TimeConverter renders correctly 1`] = `
       </strong>
     </p>
      
-    <div>
+    <div
+      class="col-sm-8"
+    >
       <div
         class="row"
+        style="margin-right: 20px;"
       >
         <div
           class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
@@ -41,7 +51,7 @@ exports[`TimeConverter renders correctly 1`] = `
           </p>
            
           <input
-            class="time-input"
+            class="regular-time-input"
             name="Month"
             type="text"
           />
@@ -54,7 +64,7 @@ exports[`TimeConverter renders correctly 1`] = `
           </p>
            
           <input
-            class="time-input"
+            class="regular-time-input"
             name="Day"
             type="text"
           />
@@ -67,7 +77,7 @@ exports[`TimeConverter renders correctly 1`] = `
           </p>
            
           <input
-            class="time-input"
+            class="regular-time-input"
             name="Year"
             type="text"
           />
@@ -80,7 +90,7 @@ exports[`TimeConverter renders correctly 1`] = `
           </p>
            
           <input
-            class="time-input"
+            class="regular-time-input"
             name="Hour"
             type="text"
           />
@@ -93,7 +103,7 @@ exports[`TimeConverter renders correctly 1`] = `
           </p>
            
           <input
-            class="time-input"
+            class="regular-time-input"
             name="Minute"
             type="text"
           />
@@ -106,7 +116,7 @@ exports[`TimeConverter renders correctly 1`] = `
           </p>
            
           <input
-            class="time-input"
+            class="regular-time-input"
             name="Second"
             type="text"
           />

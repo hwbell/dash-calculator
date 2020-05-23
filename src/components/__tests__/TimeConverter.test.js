@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import TimeConverter from '../TimeConverter.vue'
-
+import Vue from 'vue';
 const message = 'This is a TimeConverter component for us to start with!';
 
 describe('TimeConverter', () => {
@@ -22,6 +22,18 @@ describe('TimeConverter', () => {
     expect(wrapper.findAll('.time-converter-component').length).toBe(1);
     expect(wrapper.findAll('#current-unix-time').length).toBe(1);
     expect(wrapper.findAll('#current-verbal-time').length).toBe(1);
+  })
+
+  test('assigns the time to the input values on created', async () => {
+    await Vue.nextTick();
+
+    expect(wrapper.vm.regularTime).toBeTruthy();
+    expect(wrapper.vm.regularTime.length).toBe(6);
+    wrapper.vm.regularTime.forEach((input) => {
+      expect(typeof(input.val)).toBe('string')
+      expect(typeof(input.text)).toBe('string')
+    })
+
   })
 
   // test(`assigns the computed value on the component properly`, () => {

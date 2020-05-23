@@ -1,12 +1,18 @@
 <template>
-  <div class="time-converter-component left-all-col">
-    <div id="current-unix-time">
-      <span><strong>Unix Timestamp:</strong> <input type="text" :value="unixTime"/></span>
+  <div class="time-converter-component top-left-all-col">
+    <div id="current-unix-time" class="top-left-all-row row">
+      <div class="col-sm-4" style="padding: 0">
+        <strong>Unix Timestamp:</strong>
+      </div>
+
+      <input class="unix-time-input col-sm-8" type="text" :value="unixTime" />
     </div>
-    <div id="current-verbal-time left-all-row">
-      <p style="font-size: 16pt;"><strong>Regular Time & Date:</strong></p>
-      <div class="">
-        <div class="row">
+    <div id="current-verbal-time" class="top-left-all-row row">
+      <p class="col-sm-4" style="font-size: 16pt;">
+        <strong>Regular Time & Date:</strong>
+      </p>
+      <div class="col-sm-8">
+        <div class="row" style="margin-right: 20px">
           <div
             v-for="(prop, ind) in this.regularTime"
             v-bind:key="ind"
@@ -14,10 +20,11 @@
           >
             <p>{{ prop.text }}</p>
             <input
-              class="time-input"
+              class="regular-time-input"
               type="text"
               :name="prop.text"
-              :value="prop.val"
+              v-model="prop.val"
+              @input="handleRegularTimeChange(prop)"
             />
           </div>
         </div>
@@ -96,35 +103,44 @@ export default {
       // `this` inside methods point to the Vue instance
       this.message = "Nice to meet you!";
     },
+    handleRegularTimeChange: function(prop) {
+      // console.log(prop);
+      this.regularTime.forEach((obj, i) => {
+        if (this.regularTime[i].text === prop.text) {
+          this.regularTime[i].val = prop.val;
+          return console.log(this.regularTime);
+        }
+      })
+    },
     resetTime: function() {
       const moment = require("moment");
       this.unixTime = moment().unix();
-      this.regularTime = {
-        year: {
+      this.regularTime = [
+        {
+          text: "Month",
+          val: moment().format("M"),
+        },
+        {
+          text: "Day",
+          val: moment().format("D"),
+        },
+        {
           text: "Year",
           val: moment().format("YYYY"),
         },
-        month: {
-          text: "Month",
-          val: moment().format("mmmm"),
-        },
-        day: {
-          text: "",
-          val: moment().format("dddd"),
-        },
-        hour: {
-          text: "",
+        {
+          text: "Hour",
           val: moment().format("hh"),
         },
-        minute: {
-          text: "",
+        {
+          text: "Minute",
           val: moment().format("mm"),
         },
-        second: {
-          text: "",
+        {
+          text: "Second",
           val: moment().format("ss"),
         },
-      };
+      ];
     },
   },
 };
@@ -140,19 +156,24 @@ h3 {
   color: white;
 }
 #current-unix-time {
+  width: 100%;
   margin: 20px 0;
   font-size: 16pt;
   color: white;
 }
 #current-verbal-time {
   width: 100%;
+  /* margin: 20px; */
 }
 .time-input-holder {
   font-size: 14pt;
 }
-.time-input {
+.regular-time-input {
   border-radius: 4px;
   width: 100px;
-  /* min-width: 100px; */
+}
+.unix-time-input {
+  border-radius: 12px;
+  max-width: 200px;
 }
 </style>
