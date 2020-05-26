@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/App.vue</title>
+    <title>Code coverage report for components/News.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> App.vue</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> News.vue</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -113,15 +113,7 @@
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,12 +136,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,10 +145,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,67 +170,59 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-  &lt;div id="app"&gt;
-    &lt;div id="content"&gt;
-      &lt;div class="space-all-row fixed-top"&gt;
-        &lt;div id="time-display"&gt;
-          &lt;TimeDisplay v-bind:showTime="true" /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+  &lt;div class="news-component"&gt;
+    &lt;p&gt;
+      &lt;span&gt;&lt;strong&gt;Top News this 
+          &lt;!-- make the button a sorter --&gt;
+          &lt;button class="btn btn-link"&gt;Week&lt;/button&gt;
+        &lt;/strong&gt;
+      &lt;/span&gt;
+    &lt;/p&gt;
 &nbsp;
-      &lt;div class="row" style="margin-top: 60px"&gt;
-&nbsp;
-        &lt;div class="col-sm-12 col-md-8"&gt;
-          &lt;News /&gt;
-        &lt;/div&gt;
-        &lt;div class="col-sm-12 col-md-4"&gt;
-          &lt;TimeConverter /&gt;
-          &lt;div class=""&gt;&lt;Calculator msg="Calculator" /&gt;&lt;/div&gt;
-        &lt;/div&gt;
+    &lt;div class="news-articles-holder center-all-col"&gt;
+      &lt;div class="news-article"&gt;
 &nbsp;
       &lt;/div&gt;
     &lt;/div&gt;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
   &lt;/div&gt;
 &lt;/template&gt;
 &nbsp;
 &lt;script&gt;
-<span class="cstat-no" title="statement not covered" >import Calculator from "./components/Calculator.vue";</span>
-<span class="cstat-no" title="statement not covered" >import TimeDisplay from "./components/TimeDisplay.vue";</span>
-<span class="cstat-no" title="statement not covered" >import TimeConverter from "./components/TimeConverter.vue";</span>
-<span class="cstat-no" title="statement not covered" >import News from "./components/News.vue";</span>
+import { getArticles } from "../tools/newsapi";
 &nbsp;
 export default {
-  name: "App",
-  components: {
-    Calculator,
-    TimeDisplay,
-    TimeConverter,
-    News,
+  name: "News",
+  // props: {
+  // msg: String,
+  // },
+  // components: {ExpressionWindow},
+  data: function() {
+    return {
+      message: "This is a news component for us to start with!",
+      articles: getArticles('world')
+    };
   },
+  computed: {
+    // a computed getter
+  },
+  methods: {},
 };
 &lt;/script&gt;
 &nbsp;
-&lt;style&gt;
-#app {
-  width: 100%;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
+&lt;!-- Add "scoped" attribute to limit CSS to this component only --&gt;
+&lt;style scoped&gt;
+h3 {
+  margin: 40px;
 }
-#content {
-  /* margin: 40px; */
-  padding: 40px;
-  min-height: 100vh;
-&nbsp;
-  border-radius: 6px;
-  /* background-color:rgba(255, 255, 255, 0.719); */
-  /* box-shadow: -2px 2px 12px 0px rgba(71, 70, 71, 0.514); */
-}
-#time-display {
-  width: 100%;
-  margin: 20px;
+.news-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 &lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
@@ -256,7 +232,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue May 26 2020 13:29:36 GMT-0600 (Mountain Daylight Time)
+                at Tue May 26 2020 09:33:00 GMT-0600 (Mountain Daylight Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

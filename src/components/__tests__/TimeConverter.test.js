@@ -11,11 +11,11 @@ describe('TimeConverter', () => {
   })
 
   test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(wrapper.isVueInstance()).toBeTruthy();
   })
 
   test('renders correctly', () => {
-    expect(wrapper.element).toMatchSnapshot()
+    expect(wrapper.element).toMatchSnapshot();
   })
   
   test('renders a button for each object in the array map', () => {
@@ -30,8 +30,8 @@ describe('TimeConverter', () => {
     expect(wrapper.vm.regularTime).toBeTruthy();
     expect(wrapper.vm.regularTime.length).toBe(6);
     wrapper.vm.regularTime.forEach((input) => {
-      expect(typeof(input.val)).toBe('string')
-      expect(typeof(input.text)).toBe('string')
+      expect(typeof(input.val)).toBe('string');
+      expect(typeof(input.text)).toBe('string');
     })
 
   })

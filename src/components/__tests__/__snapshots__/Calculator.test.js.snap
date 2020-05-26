@@ -4,9 +4,7 @@ exports[`Calculator renders correctly 1`] = `
 <div
   class="calculator"
 >
-  <h3
-    style="color: white;"
-  >
+  <h3>
     Calculator
   </h3>
    

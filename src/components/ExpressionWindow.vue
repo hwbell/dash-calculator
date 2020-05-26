@@ -23,15 +23,15 @@ export default {
 <style scoped>
 
 .expression-window {
-  height: 60px;
-  width: 400px;
+  height: 50px;
+  width: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   border-radius: 4px;
-  border: 2px solid white;
+  border: 2px solid rgb(224, 224, 224);
   background: white;
 }
 .answer-text {

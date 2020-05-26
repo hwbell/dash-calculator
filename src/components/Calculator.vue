@@ -1,6 +1,6 @@
 <template>
   <div class="calculator">
-    <h3 style="color: white;">Calculator</h3>
+    <h3>Calculator</h3>
 
     <ExpressionWindow
       v-bind:expression="expressionDisplay"
@@ -190,21 +190,27 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-  margin: 10px;
+  margin: 10px 0;
 }
 .calculator {
-  margin: 60px 20px;
+  background-color: white;
+  /* width: 100%; */
+  padding: 20px;
+  border-radius: 2px;
+  /* border: 1px solid rgb(207, 206, 206); */
+  box-shadow: -4px 2px 14px 12px rgba(255, 72, 0, 0.116);
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 .calculator-buttons {
-  min-width: 400px;
+  width: 100%;
 }
 .calculator-button {
   padding: 10px;
-  width: 100px;
+  width: 25%;
   border-radius: 0;
   border: 1px solid rgb(255, 255, 255);
 }

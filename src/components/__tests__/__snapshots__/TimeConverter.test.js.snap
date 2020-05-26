@@ -4,50 +4,70 @@ exports[`TimeConverter renders correctly 1`] = `
 <div
   class="time-converter-component top-left-all-col"
 >
+  <h3>
+    Time Converter
+  </h3>
+   
   <div
-    class="top-left-all-row row"
+    class="space-all-row row"
     id="current-unix-time"
   >
     <div
-      class="col-sm-4"
-      style="padding: 0px;"
+      class="left-all-col"
     >
-      <strong>
-        Unix Timestamp:
-      </strong>
+      <p
+        style="margin: 0px;"
+      >
+        <strong>
+          Unix Timestamp:
+        </strong>
+      </p>
+       
+      <input
+        class="unix-time-input"
+        type="text"
+      />
+       
+      <button
+        class="btn btn-sm btn-primary"
+      >
+        
+        sync time & date
+      
+      </button>
     </div>
-     
-    <input
-      class="unix-time-input col-sm-8"
-      type="text"
-    />
   </div>
    
+  <hr />
+   
   <div
-    class="top-left-all-row row"
+    class="space-all-row row"
     id="current-verbal-time"
   >
-    <p
-      class="col-sm-4"
-      style="font-size: 16pt;"
-    >
-      <strong>
-        Regular Time & Date:
-      </strong>
-    </p>
-     
     <div
-      class="col-sm-8"
+      class="left-all-col"
     >
+      <p
+        style="margin: 0px;"
+      >
+        <strong>
+          Time & Date:
+        </strong>
+      </p>
+       
       <div
         class="row"
         style="margin-right: 20px;"
       >
         <div
-          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
         >
-          <p>
-            Month
+          <p
+            style="margin: 0px;"
+          >
+            <strong>
+              Month
+            </strong>
           </p>
            
           <input
@@ -57,10 +77,14 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
         >
-          <p>
-            Day
+          <p
+            style="margin: 0px;"
+          >
+            <strong>
+              Day
+            </strong>
           </p>
            
           <input
@@ -70,10 +94,14 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
         >
-          <p>
-            Year
+          <p
+            style="margin: 0px;"
+          >
+            <strong>
+              Year
+            </strong>
           </p>
            
           <input
@@ -83,10 +111,14 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
         >
-          <p>
-            Hour
+          <p
+            style="margin: 0px;"
+          >
+            <strong>
+              Hour
+            </strong>
           </p>
            
           <input
@@ -96,10 +128,14 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
         >
-          <p>
-            Minute
+          <p
+            style="margin: 0px;"
+          >
+            <strong>
+              Minute
+            </strong>
           </p>
            
           <input
@@ -109,10 +145,14 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
         >
-          <p>
-            Second
+          <p
+            style="margin: 0px;"
+          >
+            <strong>
+              Second
+            </strong>
           </p>
            
           <input
@@ -122,6 +162,14 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
       </div>
+       
+      <button
+        class="btn btn-sm btn-primary"
+      >
+        
+        sync unix timestamp
+      
+      </button>
     </div>
   </div>
 </div>

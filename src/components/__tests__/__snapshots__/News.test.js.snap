@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`News renders correctly 1`] = `
+<div
+  class="news-component"
+>
+  <div
+    class="news-articles-holder left-all-col"
+  >
+    <p
+      style="margin: 0px;"
+    >
+      <strong>
+        Top News this 
+        <strong
+          style="color: blue;"
+        >
+          week
+        </strong>
+      </strong>
+    </p>
+     
+    <div
+      class="news-article"
+    >
+      <div
+        class="space-all-row"
+      >
+        <div
+          class="left-all-col"
+        >
+          <p
+            class="article-title"
+          >
+            Musk's SpaceX set for debut astronaut mission, renewing NASA's crewed launch program - TheChronicleHerald.ca
+          </p>
+           
+          <p>
+            2020-05-26
+          </p>
+        </div>
+         
+        <img
+          alt="article image"
+          class="article-image"
+          src="https://www.thechronicleherald.ca/media/photologue/photos/cache/musks-spacex-set-for-debut-astronaut-mission-renewing-nasas-crewed-launch-program_medium"
+        />
+      </div>
+       
+      <p
+        class="article-author"
+      >
+        Joey Roulette
+      </p>
+       
+      <p
+        class="article-description"
+      >
+        <span>
+          By Joey Roulette
+CAPE CANAVERAL, Fla. (Reuters) - Entrepreneur Elon Musk's SpaceX is set to launch two American astronauts to the International Space Station on Wednesday from NASA's Kennedy Space C… [+1974 chars]
+        </span>
+         
+        <a
+          alt="article link"
+        />
+      </p>
+    </div>
+    <div
+      class="news-article"
+    >
+      <div
+        class="space-all-row"
+      >
+        <div
+          class="left-all-col"
+        >
+          <p
+            class="article-title"
+          >
+            U.S. Memorial Day crowds small, subdued amid coronavirus pandemic - Global News
+          </p>
+           
+          <p>
+            2020-05-25
+          </p>
+        </div>
+         
+        <img
+          alt="article image"
+          class="article-image"
+          src="https://shawglobalnews.files.wordpress.com/2020/05/1000-32.jpeg?quality=70&strip=all&w=720&h=379&crop=1"
+        />
+      </div>
+       
+      <p
+        class="article-author"
+      >
+        Curt Anderson And Brian Mahoney
+      </p>
+       
+      <p
+        class="article-description"
+      >
+        <span>
+          Americans settled for small processions and online tributes instead of parades Monday as they observed Memorial Day in the shadow of the pandemic, which forced communities to honour the nation’s mili… [+5855 chars]
+        </span>
+         
+        <a
+          alt="article link"
+        />
+      </p>
+    </div>
+  </div>
+</div>
+`;

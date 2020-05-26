@@ -1,24 +1,37 @@
 <template>
   <div class="time-converter-component top-left-all-col">
-    <div id="current-unix-time" class="top-left-all-row row">
-      <div class="col-sm-4" style="padding: 0">
-        <strong>Unix Timestamp:</strong>
-      </div>
 
-      <input class="unix-time-input col-sm-8" type="text" :value="unixTime" />
+        <h3>Time Converter</h3>
+
+    <div id="current-unix-time" class="space-all-row row">
+
+      <div class="left-all-col">
+        <p style="margin: 0"><strong>Unix Timestamp:</strong></p>
+        <input
+          class="unix-time-input"
+          type="text"
+          v-model="unixTime"
+        />
+        <button class="btn btn-sm btn-primary" @click="syncTime(1)">
+          sync time & date
+        </button>
+      </div>
     </div>
-    <div id="current-verbal-time" class="top-left-all-row row">
-      <p class="col-sm-4" style="font-size: 16pt;">
-        <strong>Regular Time & Date:</strong>
-      </p>
-      <div class="col-sm-8">
+
+    <hr />
+    <div id="current-verbal-time" class="space-all-row row">
+      <div class="left-all-col">
+        <p style="margin: 0"><strong>Time & Date:</strong></p>
         <div class="row" style="margin-right: 20px">
+
           <div
             v-for="(prop, ind) in this.regularTime"
             v-bind:key="ind"
-            class="time-input-holder col-xs-6 col-sm-4 col-md-2 col-lg-2"
+            class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
           >
-            <p>{{ prop.text }}</p>
+            <p style="margin: 0">
+              <strong>{{ prop.text }}</strong>
+            </p>
             <input
               class="regular-time-input"
               type="text"
@@ -28,6 +41,9 @@
             />
           </div>
         </div>
+        <button class="btn btn-sm btn-primary" @click="syncTime(0)">
+          sync unix timestamp
+        </button>
       </div>
     </div>
   </div>
@@ -110,37 +126,69 @@ export default {
           this.regularTime[i].val = prop.val;
           return console.log(this.regularTime);
         }
-      })
+      });
     },
-    resetTime: function() {
+    syncTime: function(bool) {
       const moment = require("moment");
-      this.unixTime = moment().unix();
-      this.regularTime = [
-        {
-          text: "Month",
-          val: moment().format("M"),
-        },
-        {
-          text: "Day",
-          val: moment().format("D"),
-        },
-        {
-          text: "Year",
-          val: moment().format("YYYY"),
-        },
-        {
-          text: "Hour",
-          val: moment().format("hh"),
-        },
-        {
-          text: "Minute",
-          val: moment().format("mm"),
-        },
-        {
-          text: "Second",
-          val: moment().format("ss"),
-        },
-      ];
+      // use the bool switch to determine which direction the translation is going,
+      // unix --> regular happens when bool === 1
+      // regular --> unix happens when bool === 0
+
+      // from unix entry
+      if (bool) {
+        // construct the moment from the entered unix time, corrected to ms by * 1000
+        let today = moment(this.unixTime * 1000);
+
+        // assign the input values from the moment
+        this.regularTime = [
+          {
+            text: "Month",
+            val: today.month() + 1,
+          },
+          {
+            text: "Day",
+            val: today.date(),
+          },
+          {
+            text: "Year",
+            val: today.year(),
+          },
+          {
+            text: "Hour",
+            val: today.hour(),
+          },
+          {
+            text: "Minute",
+            val: today.minute(),
+          },
+          {
+            text: "Second",
+            val: today.second(),
+          },
+        ];
+      }
+      // from unix entries
+      else {
+        // moment can accept an array of values in this way to create a new date
+        // [year, month, day, hour, minute, second, millisecond]
+        // drop the millisecond
+
+        // there's not a great way to sort this
+        let momentArray = [
+          // year
+          this.regularTime[2].val,
+          // month
+          this.regularTime[0].val-1,
+          // etc
+          this.regularTime[1].val,
+          this.regularTime[3].val,
+          this.regularTime[4].val,
+          this.regularTime[5].val,
+        ];
+        // construct the moment from the input vals
+        let dayEntered = moment(momentArray);
+        this.unixTime = dayEntered.unix();
+      }
     },
   },
 };
@@ -149,31 +197,45 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-  margin: 40px;
+  margin: 10px 0;
+}
+.btn {
+  margin: 10px 0;
 }
 .time-converter-component {
-  min-width: 400px;
-  color: white;
+  margin-top: 62px;
+  /* min-width: 400px; */
+  background-color: white;
+  /* width: 100%; */
+  padding: 20px;
+  /* margin: 20px 0; */
+  border-radius: 2px;
+  /* border: 1px solid rgb(207, 206, 206); */
+  box-shadow: -2px 2px 12px 10px rgba(0, 60, 255, 0.226);
 }
 #current-unix-time {
-  width: 100%;
+  /* width: 100%; */
   margin: 20px 0;
-  font-size: 16pt;
-  color: white;
+  /* font-size: 16pt; */
 }
 #current-verbal-time {
-  width: 100%;
+  /* width: 100%; */
   /* margin: 20px; */
+  margin: 20px 0;
+
 }
 .time-input-holder {
-  font-size: 14pt;
+  /* font-size: 14pt; */
 }
 .regular-time-input {
   border-radius: 4px;
-  width: 100px;
+  border: 1px solid rgb(170, 170, 170);
+  width: 90px;
 }
 .unix-time-input {
-  border-radius: 12px;
-  max-width: 200px;
+  border-radius: 4px;
+  margin: 10px 0;
+  border: 1px solid rgb(170, 170, 170);
+  /* max-width: 200px; */
 }
 </style>
