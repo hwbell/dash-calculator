@@ -1,26 +1,75 @@
 <template>
-  <div class="news-component">
+  <div id="news-component">
     <div v-if="articles != null" class="news-articles-holder left-all-col">
-      <p style="margin: 0">
-        <strong>Top News this <strong style="color:blue">{{ sorter }}</strong> </strong>
-      </p>
+      <div style="width: 100%">
+        <div class="left-all-row" style="width: 100%">
+          <p style="margin: 0px 10px 0 0">
+            <strong
+              >Top News this
+              <strong style="color: #007bff">{{ sorter }}</strong>
+            </strong>
+          </p>
+          <button
+            @click="sortArticles(lastDay)"
+            class="btn btn-sm btn-outline-primary"
+          >
+            last day
+          </button>
+          <button
+            @click="sortArticles(lastWeek)"
+            class="btn btn-sm btn-outline-primary"
+          >
+            last week
+          </button>
+          <button
+            @click="sortArticles(lastMonth)"
+            class="btn btn-sm btn-outline-primary"
+          >
+            last month
+          </button>
+        </div>
+
+        <div class="left-all-row">
+          <input
+            class="search-input"
+            @keyup.enter="fireSearch()"
+            v-model="searchQuery"
+            type="text"
+          />
+          <button @click="fireSearch()" class="btn btn-sm btn-primary">
+            search
+          </button>
+        </div>
+      </div>
+
       <div
         v-for="(article, ind) in articles"
         v-bind:key="ind"
-        class="news-article"
+        class="news-article shadow-card"
       >
         <div class="space-all-row">
           <div class="left-all-col">
             <p class="article-title">{{ article.title }}</p>
-            <p>{{ article.publishedAt.slice(0,10) }}</p>
+            <p>{{ article.publishedAt.slice(0, 10) }}</p>
           </div>
-          <img class="article-image" v-bind:src="article.urlToImage" alt="article image">
+          <img
+            class="article-image"
+            v-bind:src="article.urlToImage"
+            alt="article image"
+          />
         </div>
-        <p class="article-author">{{ article.author }}</p>
+        <p class="article-author">
+          <span v-if="article.author">{{ article.author }}, </span
+          ><span v-if="article.source.name">
+            from {{ article.source.name }}</span
+          >
+        </p>
         <p class="article-description">
           <span>{{ article.content }}</span>
-          <a v-bind:href="article.link" alt="article link"></a>
         </p>
+        <a v-bind:href="article.url" target="_blank" alt="article link"
+          >&nbsp;&nbsp;&nbsp;read full article</a
+        >
       </div>
     </div>
   </div>
@@ -36,42 +85,87 @@ export default {
   // },
   // components: {ExpressionWindow},
   data: function() {
+    const moment = require("moment");
+    let today = moment().format("YYYY-MM-DD");
+    let lastDay = moment()
+      .subtract(1, "d")
+      .format("YYYY-MM-DD");
+
+    let lastWeek = moment()
+      .subtract(7, "d")
+      .format("YYYY-MM-DD");
+    let lastMonth = moment()
+      .subtract(30, "d")
+      .format("YYYY-MM-DD");
+
     return {
-      sorter: "week",
+      searchQuery: "covid-19",
+      sorter: lastWeek,
       message: "This is a news component for us to start with!",
       articles: [],
+      today,
+      lastDay,
+      lastWeek,
+      lastMonth,
     };
   },
   created: function() {
-    this.getArticles();
+    this.getArticles(this.searchQuery, this.sorter);
   },
   computed: {
     // a computed getter
   },
   methods: {
-    getArticles: async function(query) {
-      const searchUrl =
-        "https://newsapi.org/v2/everything?q=news&from=2020-05-25&to=2020-05-26";
+    getArticles: async function(query, fromDate) {
+      if (Boolean(fromDate) === false) {
+        fromDate = this.lastDay;
+      }
+      let serverResponse;
+
+      // construct the url with the query and to / from dates
+      const searchUrl = `https://newsapi.org/v2/everything?q=${query}&from=${fromDate}&to=${this.today}`;
+
+      // check localstorage first
+      if (Boolean(localStorage.getItem(searchUrl)) === true) {
+        console.log(`found news search for ${searchUrl} in local storage`);
+        serverResponse = JSON.parse(
+          localStorage.getItem(searchUrl)
+        );
+        this.articles = serverResponse.articles;
+
+        return serverResponse;
+      }
 
       let headers = {
         Authorization: process.env.VUE_APP_NEWSAPIKEY,
       };
 
-      console.log(headers);
-      let serverResponse = await fetch(searchUrl + `&q=${query}`, {
+      serverResponse = await fetch(searchUrl, {
         method: "GET",
         headers,
       })
         .then((response) => response.json())
         .then((response) => {
-          // console.log(response)
           return response;
         })
         .catch((err) => console.log(err));
 
-      console.log(serverResponse.articles);
+      console.log(serverResponse);
+
+      // save to state
       this.articles = serverResponse.articles;
+      // save to local storage
+      localStorage.setItem(searchUrl, JSON.stringify(serverResponse));
       return serverResponse;
+    },
+    sortArticles: async function(sorter) {
+      this.sorter = sorter;
+      console.log(`re-fetching articles for the last ${sorter}`);
+      this.getArticles(this.searchQuery, sorter);
+    },
+    fireSearch: function() {
+      console.log(`searching for ${this.searchQuery}`);
+      this.getArticles(this.searchQuery, this.sorter);
     },
   },
 };
@@ -82,7 +176,10 @@ export default {
 h3 {
   margin: 40px;
 }
-.news-component {
+.btn {
+  margin: 4px;
+}
+#news-component {
   /* width: 100%; */
   padding: 20px;
   background-color: white;
@@ -90,7 +187,12 @@ h3 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
+}
+.search-input {
+  /* width: 100%; */
+  border-radius: 4px;
+  margin: 10px 0;
+  border: 1px solid rgb(170, 170, 170);
 }
 .news-article {
   background-color: white;
@@ -99,10 +201,9 @@ h3 {
   padding: 20px;
   border-radius: 2px;
   /* border: 1px solid rgb(207, 206, 206); */
-  box-shadow: -2px 2px 12px 10px rgba(47, 0, 255, 0.137);
 }
 .article-image {
-  width: 100px;
+  /* width: 100px; */
   height: 100px;
   border-radius: 10px;
 }

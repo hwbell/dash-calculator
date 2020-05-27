@@ -2,26 +2,77 @@
 
 exports[`News renders correctly 1`] = `
 <div
-  class="news-component"
+  id="news-component"
 >
   <div
     class="news-articles-holder left-all-col"
   >
-    <p
-      style="margin: 0px;"
+    <div
+      style="width: 100%;"
     >
-      <strong>
-        Top News this 
-        <strong
-          style="color: blue;"
+      <div
+        class="left-all-row"
+        style="width: 100%;"
+      >
+        <p
+          style="margin: 0px 10px 0px 0px;"
         >
-          week
-        </strong>
-      </strong>
-    </p>
+          <strong>
+            Top News this
+            
+            <strong
+              style="color: rgb(0, 123, 255);"
+            >
+              2020-05-20
+            </strong>
+          </strong>
+        </p>
+         
+        <button
+          class="btn btn-sm btn-outline-primary"
+        >
+          
+          last day
+        
+        </button>
+         
+        <button
+          class="btn btn-sm btn-outline-primary"
+        >
+          
+          last week
+        
+        </button>
+         
+        <button
+          class="btn btn-sm btn-outline-primary"
+        >
+          
+          last month
+        
+        </button>
+      </div>
+       
+      <div
+        class="left-all-row"
+      >
+        <input
+          class="search-input"
+          type="text"
+        />
+         
+        <button
+          class="btn btn-sm btn-primary"
+        >
+          
+          search
+        
+        </button>
+      </div>
+    </div>
      
     <div
-      class="news-article"
+      class="news-article shadow-card"
     >
       <div
         class="space-all-row"
@@ -50,7 +101,13 @@ exports[`News renders correctly 1`] = `
       <p
         class="article-author"
       >
-        Joey Roulette
+        <span>
+          Joey Roulette, 
+        </span>
+        <span>
+          
+          from TheChronicleHerald.ca
+        </span>
       </p>
        
       <p
@@ -60,14 +117,18 @@ exports[`News renders correctly 1`] = `
           By Joey Roulette
 CAPE CANAVERAL, Fla. (Reuters) - Entrepreneur Elon Musk's SpaceX is set to launch two American astronauts to the International Space Station on Wednesday from NASA's Kennedy Space C… [+1974 chars]
         </span>
-         
-        <a
-          alt="article link"
-        />
       </p>
+       
+      <a
+        alt="article link"
+        href="https://www.thechronicleherald.ca/news/world/musks-spacex-set-for-debut-astronaut-mission-renewing-nasas-crewed-launch-program-453854/"
+        target="_blank"
+      >
+           read full article
+      </a>
     </div>
     <div
-      class="news-article"
+      class="news-article shadow-card"
     >
       <div
         class="space-all-row"
@@ -96,7 +157,13 @@ CAPE CANAVERAL, Fla. (Reuters) - Entrepreneur Elon Musk's SpaceX is set to launc
       <p
         class="article-author"
       >
-        Curt Anderson And Brian Mahoney
+        <span>
+          Curt Anderson And Brian Mahoney, 
+        </span>
+        <span>
+          
+          from Global News
+        </span>
       </p>
        
       <p
@@ -105,11 +172,15 @@ CAPE CANAVERAL, Fla. (Reuters) - Entrepreneur Elon Musk's SpaceX is set to launc
         <span>
           Americans settled for small processions and online tributes instead of parades Monday as they observed Memorial Day in the shadow of the pandemic, which forced communities to honour the nation’s mili… [+5855 chars]
         </span>
-         
-        <a
-          alt="article link"
-        />
       </p>
+       
+      <a
+        alt="article link"
+        href="http://globalnews.ca/news/6981600/coronavirus-memorial-day-warnings/"
+        target="_blank"
+      >
+           read full article
+      </a>
     </div>
   </div>
 </div>

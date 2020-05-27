@@ -12,24 +12,23 @@ describe('TimeDisplay', () => {
   })
 
   test('is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy()
+    const wrapper = mount(TimeDisplay)
+    // expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
   test('renders correctly', () => {
+    const wrapper = mount(TimeDisplay)
     expect(wrapper.element).toMatchSnapshot()
   })
 
   test('renders the right components', async () => {
+    const wrapper = mount(TimeDisplay)
+
     let messageDiv = wrapper.findAll('.time-display-component');
     expect(messageDiv.length).toBe(1);
 
     // time needs the showTime boolean to render
     let timeDiv = wrapper.findAll('#current-time');
-    expect(wrapper.findAll('#current-time').length).toBe(0);
-
-    // change the boolean
-    wrapper.setProps({ showTime: true });
-    await Vue.nextTick();
     expect(wrapper.findAll('#current-time').length).toBe(1);
 
 

@@ -1,12 +1,23 @@
 <template>
   <div class="time-display-component">
-    <div v-if="showTime" class="space-all-row" id="current-time">
-      <span class="app-title">
-        <strong>Dashboard</strong> 
-      </span>
-      <span class="time-date">
-        {{ timeDate }}, <span class="time-hours">{{ timeHours }}</span>
-      </span>
+    <div class="space-all-row" id="current-time">
+      <div class="app-title left-all-row">
+        <img
+          v-bind:src="require('../assets/images/vuejs.png')"
+          alt="Vuejs icon"
+          id="vue-image"
+        />
+        <strong>uejs Dashboard</strong>
+      </div>
+      <div>
+        <span class="time-date">
+          {{ timeDate }}, <span class="time-hours">{{ timeHours }}</span>
+        </span>
+        <br />
+        <span class="time-date">
+          Unix Time: <span class="time-hours">{{ unixTime }}</span>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -16,25 +27,33 @@
 
 export default {
   name: "TimeDisplay",
-  props: {
-    showTime: Boolean,
-  },
+  // props: {
+  //   showTime: Boolean,
+  // },
   created: function() {
     const moment = require("moment");
 
     this.timeDate = moment().format("MMMM Do YYYY");
     this.timeHours = moment().format("h:mm a");
+    this.unixTime = moment().unix();
+
     setInterval(() => {
-      console.log("interval");
       this.timeDate = moment().format("MMMM Do YYYY");
       this.timeHours = moment().format("h:mm a");
+      this.unixTime = moment().unix();
+
     }, 60000);
+
+    // setInterval(() => {
+      // this.unixTime = moment().unix();
+    // }, 1000)
   },
   // components: {ExpressionWindow},
   data: function() {
     return {
       timeDate: "",
       timeHours: "",
+      unixTime: "",
       message: "This is a TimeDisplay component for us to start with!",
     };
   },
@@ -61,6 +80,9 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#vue-image {
+  width: 30px;
 }
 .app-title {
   font-size: 18pt;

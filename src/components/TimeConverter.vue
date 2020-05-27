@@ -203,7 +203,6 @@ h3 {
   margin: 10px 0;
 }
 .time-converter-component {
-  margin-top: 62px;
   /* min-width: 400px; */
   background-color: white;
   /* width: 100%; */
@@ -211,7 +210,7 @@ h3 {
   /* margin: 20px 0; */
   border-radius: 2px;
   /* border: 1px solid rgb(207, 206, 206); */
-  box-shadow: -2px 2px 12px 10px rgba(0, 60, 255, 0.226);
+  /* box-shadow: -2px 2px 12px 10px rgba(0, 60, 255, 0.226); */
 }
 #current-unix-time {
   /* width: 100%; */
@@ -230,7 +229,7 @@ h3 {
 .regular-time-input {
   border-radius: 4px;
   border: 1px solid rgb(170, 170, 170);
-  width: 90px;
+  width: 75px;
 }
 .unix-time-input {
   border-radius: 4px;

@@ -61,7 +61,7 @@ describe('News', () => {
   })
   
   test('renders the correct content', () => {
-    let newsDiv = wrapper.findAll('.news-component');
+    let newsDiv = wrapper.findAll('#news-component');
     expect(newsDiv.length).toBe(1);
     // expect(messageDiv.text()).toBe('This is a base component for us to start with!')
   })

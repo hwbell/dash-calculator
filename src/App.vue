@@ -12,7 +12,7 @@
         <div class="col-sm-12 col-md-8">
           <News />
         </div>
-        <div class="col-sm-12 col-md-4">
+        <div id="tools" class="col-sm-12 col-md-4 shadow-card">
           <TimeConverter />
           <div class=""><Calculator msg="Calculator" /></div>
         </div>
@@ -42,6 +42,7 @@ export default {
 <style>
 #app {
   width: 100%;
+  /* background-color: whitesmoke; */
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,5 +61,15 @@ export default {
 #time-display {
   width: 100%;
   margin: 20px;
+}
+.fixed-top {
+  /* padding: 10px 0; */
+  background-color: white;
+  box-shadow: -2px 2px 12px 0px #007bff;
+}
+#tools {
+  margin-top: 24px;
+  border-radius: 2px;
+  height: 100%;
 }
 </style>

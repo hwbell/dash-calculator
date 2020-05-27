@@ -198,8 +198,8 @@ h3 {
   padding: 20px;
   border-radius: 2px;
   /* border: 1px solid rgb(207, 206, 206); */
-  box-shadow: -4px 2px 14px 12px rgba(255, 72, 0, 0.116);
-  margin-top: 40px;
+  /* box-shadow: -4px 2px 14px 12px rgba(255, 72, 0, 0.116); */
+  /* margin-top: 40px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

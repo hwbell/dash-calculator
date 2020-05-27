@@ -4,6 +4,51 @@ exports[`TimeDisplay renders correctly 1`] = `
 <div
   class="time-display-component"
 >
-  <!---->
+  <div
+    class="space-all-row"
+    id="current-time"
+  >
+    <div
+      class="app-title left-all-row"
+    >
+      <img
+        alt="Vuejs icon"
+        id="vue-image"
+        src="[object Object]"
+      />
+       
+      <strong>
+        uejs Dashboard
+      </strong>
+    </div>
+     
+    <div>
+      <span
+        class="time-date"
+      >
+        
+        May 27th 2020, 
+        <span
+          class="time-hours"
+        >
+          10:29 am
+        </span>
+      </span>
+       
+      <br />
+       
+      <span
+        class="time-date"
+      >
+        
+        Unix Time: 
+        <span
+          class="time-hours"
+        >
+          1590596946
+        </span>
+      </span>
+    </div>
+  </div>
 </div>
 `;
