@@ -3,7 +3,7 @@
     <div class="space-all-row" id="current-time">
       <div class="app-title left-all-row">
         <img
-          v-bind:src="require('../assets/images/vuejs.png')"
+          src="../assets/images/vuejs.png"
           alt="Vuejs icon"
           id="vue-image"
         />
@@ -13,10 +13,9 @@
         <span class="time-date">
           {{ timeDate }}, <span class="time-hours">{{ timeHours }}</span>
         </span>
-        <br />
-        <span class="time-date">
+        <!-- <span class="time-date">
           Unix Time: <span class="time-hours">{{ unixTime }}</span>
-        </span>
+        </span> -->
       </div>
     </div>
   </div>

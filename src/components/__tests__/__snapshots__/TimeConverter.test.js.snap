@@ -4,9 +4,9 @@ exports[`TimeConverter renders correctly 1`] = `
 <div
   class="time-converter-component top-left-all-col"
 >
-  <h3>
+  <h4>
     Time Converter
-  </h3>
+  </h4>
    
   <div
     class="space-all-row row"
@@ -60,10 +60,10 @@ exports[`TimeConverter renders correctly 1`] = `
         style="margin-right: 20px;"
       >
         <div
-          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
+          class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
         >
           <p
-            style="margin: 0px;"
+            style="margin: 0px; font-size: 10pt;"
           >
             <strong>
               Month
@@ -77,10 +77,10 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
+          class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
         >
           <p
-            style="margin: 0px;"
+            style="margin: 0px; font-size: 10pt;"
           >
             <strong>
               Day
@@ -94,10 +94,10 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
+          class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
         >
           <p
-            style="margin: 0px;"
+            style="margin: 0px; font-size: 10pt;"
           >
             <strong>
               Year
@@ -111,10 +111,10 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
+          class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
         >
           <p
-            style="margin: 0px;"
+            style="margin: 0px; font-size: 10pt;"
           >
             <strong>
               Hour
@@ -128,10 +128,10 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
+          class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
         >
           <p
-            style="margin: 0px;"
+            style="margin: 0px; font-size: 10pt;"
           >
             <strong>
               Minute
@@ -145,10 +145,10 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
         <div
-          class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
+          class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
         >
           <p
-            style="margin: 0px;"
+            style="margin: 0px; font-size: 10pt;"
           >
             <strong>
               Second
@@ -162,6 +162,10 @@ exports[`TimeConverter renders correctly 1`] = `
           />
         </div>
       </div>
+       
+      <span
+        id="calculator"
+      />
        
       <button
         class="btn btn-sm btn-primary"

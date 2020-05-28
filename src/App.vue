@@ -8,15 +8,32 @@
       </div>
 
       <div class="row" style="margin-top: 60px">
-
         <div class="col-sm-12 col-md-8">
           <News />
         </div>
         <div id="tools" class="col-sm-12 col-md-4 shadow-card">
-          <TimeConverter />
+          <span id="time-converter"></span>
+          <p style="margin: 10px 0">
+            <strong>
+              Your Dashboard Tools
+            </strong>
+          </p>
+
+          <a
+            v-for="(button, ind) in navButtons"
+            v-bind:key="ind"
+            v-bind:href="button.target"
+          >
+            <button class="btn btn-sm btn-outline-secondary">
+              {{ button.text }}
+            </button>
+          </a>
+          
+
+          <div class=""><TimeConverter /></div>
+
           <div class=""><Calculator msg="Calculator" /></div>
         </div>
-
       </div>
     </div>
   </div>
@@ -35,6 +52,20 @@ export default {
     TimeDisplay,
     TimeConverter,
     News,
+  },
+  data: function() {
+    return {
+      navButtons: [
+        {
+          text: "calculator",
+          target: "#calculator",
+        },
+        {
+          text: "time converter",
+          target: "#time-converter",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -65,7 +96,7 @@ export default {
 .fixed-top {
   /* padding: 10px 0; */
   background-color: white;
-  box-shadow: -2px 2px 12px 0px #007bff;
+  box-shadow: -2px 2px 12px 0px #007e4e;
 }
 #tools {
   margin-top: 24px;

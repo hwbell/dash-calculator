@@ -276,7 +276,37 @@
 <a name='L217'></a><a href='#L217'>217</a>
 <a name='L218'></a><a href='#L218'>218</a>
 <a name='L219'></a><a href='#L219'>219</a>
-<a name='L220'></a><a href='#L220'>220</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -456,6 +486,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -497,27 +537,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
   &lt;div class="time-converter-component top-left-all-col"&gt;
-    &lt;div id="current-unix-time" class="top-left-all-row row"&gt;
-      &lt;div class="col-sm-4" style="padding: 0"&gt;
+&nbsp;
+        &lt;h4&gt;Time Converter&lt;/h4&gt;
+&nbsp;
+    &lt;div id="current-unix-time" class="space-all-row row"&gt;
+&nbsp;
+      &lt;div class="left-all-col"&gt;
         &lt;p style="margin: 0"&gt;&lt;strong&gt;Unix Timestamp:&lt;/strong&gt;&lt;/p&gt;
-        &lt;button class="btn btn-sm btn-primary" @click="syncTime(1)"&gt;sync time &amp; date&lt;/button&gt;
+        &lt;input
+          class="unix-time-input"
+          type="text"
+          v-model="unixTime"
+        /&gt;
+        &lt;button class="btn btn-sm btn-primary" @click="syncTime(1)"&gt;
+          sync time &amp; date
+        &lt;/button&gt;
       &lt;/div&gt;
-&nbsp;
-      &lt;input class="unix-time-input col-sm-8" type="text" v-model="unixTime" /&gt;
     &lt;/div&gt;
-    &lt;hr /&gt;
-    &lt;div id="current-verbal-time" class="top-left-all-row row"&gt;
-      &lt;div class="col-sm-4" style="font-size: 16pt;"&gt;
-        &lt;p style="margin: 0"&gt;&lt;strong&gt;Time &amp; Date:&lt;/strong&gt;&lt;/p&gt;
-        &lt;button class="btn btn-sm btn-primary" @click="syncTime(0)"&gt;sync unix timestamp&lt;/button&gt;
-      &lt;/div&gt;
 &nbsp;
-      &lt;div class="col-sm-8"&gt;
+    &lt;hr /&gt;
+    &lt;div id="current-verbal-time" class="space-all-row row"&gt;
+      &lt;div class="left-all-col"&gt;
+        &lt;p style="margin: 0"&gt;&lt;strong&gt;Time &amp; Date:&lt;/strong&gt;&lt;/p&gt;
         &lt;div class="row" style="margin-right: 20px"&gt;
+&nbsp;
           &lt;div
             v-for="(prop, ind) in this.regularTime"
             v-bind:key="ind"
-            class="time-input-holder col-xs-6 col-sm-4 col-md-3 col-lg-2"
+            class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
           &gt;
             &lt;p style="margin: 0"&gt;
               &lt;strong&gt;{{ prop.text }}&lt;/strong&gt;
@@ -531,6 +578,9 @@
             /&gt;
           &lt;/div&gt;
         &lt;/div&gt;
+        &lt;button class="btn btn-sm btn-primary" @click="syncTime(0)"&gt;
+          sync unix timestamp
+        &lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -624,13 +674,13 @@ export default {
       // from unix entry
 <span class="cstat-no" title="statement not covered" >      if (bool) {</span>
         // construct the moment from the entered unix time, corrected to ms by * 1000
-<span class="cstat-no" title="statement not covered" >        let today = moment(this.unixTime*1000);</span>
+<span class="cstat-no" title="statement not covered" >        let today = moment(this.unixTime * 1000);</span>
 &nbsp;
         // assign the input values from the moment
 <span class="cstat-no" title="statement not covered" >        this.regularTime = [</span>
           {
             text: "Month",
-            val: today.month()+1,
+            val: today.month() + 1,
           },
           {
             text: "Day",
@@ -665,7 +715,7 @@ export default {
           // year
           this.regularTime[2].val,
           // month
-          this.regularTime[0].val,
+          this.regularTime[0].val-1,
           // etc
           this.regularTime[1].val,
           this.regularTime[3].val,
@@ -683,35 +733,45 @@ export default {
 &nbsp;
 &lt;!-- Add "scoped" attribute to limit CSS to this component only --&gt;
 &lt;style scoped&gt;
-h3 {
-  margin: 40px;
+h4 {
+  color: rgb(0, 123, 255);
+}
+.btn {
+  margin: 10px 0;
 }
 .time-converter-component {
-  min-width: 400px;
-  color: white;
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid rgb(207, 206, 206);
+  border-radius: 2px;
 }
 #current-unix-time {
-  width: 100%;
-  margin: 20px 0;
-  font-size: 16pt;
-  color: white;
+  /* width: 100%; */
+  margin: 10px 0;
+  /* font-size: 16pt; */
 }
 #current-verbal-time {
-  width: 100%;
+  /* width: 100%; */
   /* margin: 20px; */
+  margin: 10px 0;
+&nbsp;
 }
 .time-input-holder {
-  font-size: 14pt;
+  /* font-size: 14pt; */
 }
 .regular-time-input {
+  margin: 10px 0;
   border-radius: 4px;
   border: 1px solid rgb(170, 170, 170);
-  width: 90px;
+  width: 75px;
 }
 .unix-time-input {
   border-radius: 4px;
+  margin: 10px 0;
   border: 1px solid rgb(170, 170, 170);
-  max-width: 200px;
+  /* max-width: 200px; */
 }
 &lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
@@ -721,7 +781,7 @@ h3 {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 25 2020 12:42:17 GMT-0600 (Mountain Daylight Time)
+                at Wed May 27 2020 13:22:50 GMT-0600 (Mountain Daylight Time)
             </div>
         </div>
         <script src="prettify.js"></script>

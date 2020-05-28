@@ -5,7 +5,7 @@
         <div class="left-all-row" style="width: 100%">
           <p style="margin: 0px 10px 0 0">
             <strong
-              >Top News this
+              >Top News since
               <strong style="color: #007bff">{{ sorter }}</strong>
             </strong>
           </p>
@@ -39,6 +39,9 @@
           <button @click="fireSearch()" class="btn btn-sm btn-primary">
             search
           </button>
+          <div v-if="loading" class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
         </div>
       </div>
 
@@ -64,8 +67,8 @@
             from {{ article.source.name }}</span
           >
         </p>
-        <p class="article-description">
-          <span>{{ article.content }}</span>
+        <p v-if="article.content" class="article-description">
+          <span>{{ article.content.slice(0, -(article.content.length-article.content.indexOf('['))) }}</span>
         </p>
         <a v-bind:href="article.url" target="_blank" alt="article link"
           >&nbsp;&nbsp;&nbsp;read full article</a
@@ -99,6 +102,7 @@ export default {
       .format("YYYY-MM-DD");
 
     return {
+      loading: true,
       searchQuery: "covid-19",
       sorter: lastWeek,
       message: "This is a news component for us to start with!",
@@ -128,10 +132,9 @@ export default {
       // check localstorage first
       if (Boolean(localStorage.getItem(searchUrl)) === true) {
         console.log(`found news search for ${searchUrl} in local storage`);
-        serverResponse = JSON.parse(
-          localStorage.getItem(searchUrl)
-        );
+        serverResponse = JSON.parse(localStorage.getItem(searchUrl));
         this.articles = serverResponse.articles;
+        this.loading = false;
 
         return serverResponse;
       }
@@ -139,6 +142,7 @@ export default {
       let headers = {
         Authorization: process.env.VUE_APP_NEWSAPIKEY,
       };
+      this.loading = true;
 
       serverResponse = await fetch(searchUrl, {
         method: "GET",
@@ -153,17 +157,20 @@ export default {
       console.log(serverResponse);
 
       // save to state
+      this.loading = false;
       this.articles = serverResponse.articles;
       // save to local storage
       localStorage.setItem(searchUrl, JSON.stringify(serverResponse));
       return serverResponse;
     },
     sortArticles: async function(sorter) {
+      this.loading = true;
       this.sorter = sorter;
-      console.log(`re-fetching articles for the last ${sorter}`);
+      console.log(`re-fetching articles since ${sorter}`);
       this.getArticles(this.searchQuery, sorter);
     },
     fireSearch: function() {
+      this.loading = true;
       console.log(`searching for ${this.searchQuery}`);
       this.getArticles(this.searchQuery, this.sorter);
     },

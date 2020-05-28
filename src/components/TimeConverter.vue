@@ -1,17 +1,11 @@
 <template>
   <div class="time-converter-component top-left-all-col">
-
-        <h3>Time Converter</h3>
+    <h4>Time Converter</h4>
 
     <div id="current-unix-time" class="space-all-row row">
-
       <div class="left-all-col">
         <p style="margin: 0"><strong>Unix Timestamp:</strong></p>
-        <input
-          class="unix-time-input"
-          type="text"
-          v-model="unixTime"
-        />
+        <input class="unix-time-input" type="text" v-model="unixTime" />
         <button class="btn btn-sm btn-primary" @click="syncTime(1)">
           sync time & date
         </button>
@@ -23,13 +17,12 @@
       <div class="left-all-col">
         <p style="margin: 0"><strong>Time & Date:</strong></p>
         <div class="row" style="margin-right: 20px">
-
           <div
             v-for="(prop, ind) in this.regularTime"
             v-bind:key="ind"
-            class="time-input-holder col-xs-12 col-sm-12 col-md-6 col-lg-4"
+            class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
           >
-            <p style="margin: 0">
+            <p style="margin: 0; font-size: 10pt">
               <strong>{{ prop.text }}</strong>
             </p>
             <input
@@ -41,6 +34,8 @@
             />
           </div>
         </div>
+        <span id="calculator"></span>
+
         <button class="btn btn-sm btn-primary" @click="syncTime(0)">
           sync unix timestamp
         </button>
@@ -178,7 +173,7 @@ export default {
           // year
           this.regularTime[2].val,
           // month
-          this.regularTime[0].val-1,
+          this.regularTime[0].val - 1,
           // etc
           this.regularTime[1].val,
           this.regularTime[3].val,
@@ -196,37 +191,35 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 10px 0;
+h4 {
+  color: rgb(0, 123, 255);
 }
 .btn {
   margin: 10px 0;
 }
 .time-converter-component {
-  /* min-width: 400px; */
   background-color: white;
-  /* width: 100%; */
-  padding: 20px;
-  /* margin: 20px 0; */
+  margin: 10px 0;
+  padding: 10px;
   border-radius: 2px;
-  /* border: 1px solid rgb(207, 206, 206); */
-  /* box-shadow: -2px 2px 12px 10px rgba(0, 60, 255, 0.226); */
+  border: 1px solid rgb(207, 206, 206);
+  border-radius: 2px;
 }
 #current-unix-time {
   /* width: 100%; */
-  margin: 20px 0;
+  margin: 10px 0;
   /* font-size: 16pt; */
 }
 #current-verbal-time {
   /* width: 100%; */
   /* margin: 20px; */
-  margin: 20px 0;
-
+  margin: 10px 0;
 }
 .time-input-holder {
   /* font-size: 14pt; */
 }
 .regular-time-input {
+  margin: 10px 0;
   border-radius: 4px;
   border: 1px solid rgb(170, 170, 170);
   width: 75px;

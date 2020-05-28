@@ -12,7 +12,7 @@
 
 
 export default {
-  name: "Base",
+  name: "ScrollButton",
   props: {
     target: String,
     text: String,

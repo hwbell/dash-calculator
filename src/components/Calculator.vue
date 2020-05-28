@@ -1,6 +1,6 @@
 <template>
   <div class="calculator">
-    <h3>Calculator</h3>
+    <h4>Calculator</h4>
 
     <ExpressionWindow
       v-bind:expression="expressionDisplay"
@@ -181,7 +181,12 @@ export default {
     // a computed getter
     expressionDisplay: function() {
       // `this` points to the vm instance
-      return this.currentExpressionText.join("");
+      if (this.currentExpressionText.length === 0) {
+        return "0";
+      } else {
+        return this.currentExpressionText.join("");
+
+      }
     },
   },
 };
@@ -189,21 +194,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 10px 0;
+h4 {
+  color: rgb(0, 123, 255);
 }
 .calculator {
   background-color: white;
-  /* width: 100%; */
-  padding: 20px;
+  margin: 10px 0;
+  padding: 10px;
   border-radius: 2px;
-  /* border: 1px solid rgb(207, 206, 206); */
-  /* box-shadow: -4px 2px 14px 12px rgba(255, 72, 0, 0.116); */
-  /* margin-top: 40px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  border: 1px solid rgb(207, 206, 206);
+  border-radius: 2px;
 }
 .calculator-buttons {
   width: 100%;

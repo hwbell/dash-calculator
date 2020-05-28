@@ -14,7 +14,7 @@ exports[`TimeDisplay renders correctly 1`] = `
       <img
         alt="Vuejs icon"
         id="vue-image"
-        src="[object Object]"
+        src="../assets/images/vuejs.png"
       />
        
       <strong>
@@ -27,25 +27,11 @@ exports[`TimeDisplay renders correctly 1`] = `
         class="time-date"
       >
         
-        May 27th 2020, 
+        May 28th 2020, 
         <span
           class="time-hours"
         >
-          10:29 am
-        </span>
-      </span>
-       
-      <br />
-       
-      <span
-        class="time-date"
-      >
-        
-        Unix Time: 
-        <span
-          class="time-hours"
-        >
-          1590596946
+          7:42 am
         </span>
       </span>
     </div>

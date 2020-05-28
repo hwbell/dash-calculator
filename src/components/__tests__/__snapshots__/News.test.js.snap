@@ -18,12 +18,12 @@ exports[`News renders correctly 1`] = `
           style="margin: 0px 10px 0px 0px;"
         >
           <strong>
-            Top News this
+            Top News since
             
             <strong
               style="color: rgb(0, 123, 255);"
             >
-              2020-05-20
+              2020-05-21
             </strong>
           </strong>
         </p>
@@ -68,6 +68,17 @@ exports[`News renders correctly 1`] = `
           search
         
         </button>
+         
+        <div
+          class="spinner-border text-primary"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          >
+            Loading...
+          </span>
+        </div>
       </div>
     </div>
      
@@ -115,7 +126,7 @@ exports[`News renders correctly 1`] = `
       >
         <span>
           By Joey Roulette
-CAPE CANAVERAL, Fla. (Reuters) - Entrepreneur Elon Musk's SpaceX is set to launch two American astronauts to the International Space Station on Wednesday from NASA's Kennedy Space C… [+1974 chars]
+CAPE CANAVERAL, Fla. (Reuters) - Entrepreneur Elon Musk's SpaceX is set to launch two American astronauts to the International Space Station on Wednesday from NASA's Kennedy Space C… 
         </span>
       </p>
        
@@ -170,7 +181,7 @@ CAPE CANAVERAL, Fla. (Reuters) - Entrepreneur Elon Musk's SpaceX is set to launc
         class="article-description"
       >
         <span>
-          Americans settled for small processions and online tributes instead of parades Monday as they observed Memorial Day in the shadow of the pandemic, which forced communities to honour the nation’s mili… [+5855 chars]
+          Americans settled for small processions and online tributes instead of parades Monday as they observed Memorial Day in the shadow of the pandemic, which forced communities to honour the nation’s mili… 
         </span>
       </p>
        

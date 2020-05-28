@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollButton renders correctly 1`] = `
+<div
+  class="scroll-button-component"
+>
+  <a>
+    <button
+      class="btn btn-sm btn-light"
+    >
+      
+      
+    
+    </button>
+  </a>
+</div>
+`;

@@ -4,9 +4,9 @@ exports[`Calculator renders correctly 1`] = `
 <div
   class="calculator"
 >
-  <h3>
+  <h4>
     Calculator
-  </h3>
+  </h4>
    
   <div
     class="expression-window"
@@ -14,7 +14,7 @@ exports[`Calculator renders correctly 1`] = `
     <div
       class="expression-text"
     >
-       
+      0 
     </div>
      
     <!---->
