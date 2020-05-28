@@ -127,7 +127,7 @@ export default {
       let serverResponse;
 
       // construct the url with the query and to / from dates
-      const searchUrl = `https://newsapi.org/v2/everything?q=${query}&from=${fromDate}&to=${this.today}`;
+      const searchUrl = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${query}&from=${fromDate}&to=${this.today}`;
 
       // check localstorage first
       if (Boolean(localStorage.getItem(searchUrl)) === true) {
