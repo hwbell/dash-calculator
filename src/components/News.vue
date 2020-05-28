@@ -40,7 +40,6 @@
             search
           </button>
           <div v-if="loading" class="spinner-border text-primary" role="status">
-            <span class="sr-only">Loading...</span>
           </div>
         </div>
       </div>
@@ -61,8 +60,8 @@
             alt="article image"
           />
         </div>
-        <p class="article-author">
-          <span v-if="article.author">{{ article.author }}, </span
+        <p>
+          <span class="article-author" v-if="article.author">{{ article.author }}, </span
           ><span v-if="article.source.name">
             from {{ article.source.name }}</span
           >
@@ -187,6 +186,13 @@ h3 {
 .btn {
   margin: 4px;
 }
+a {
+  font-weight: bolder;
+}
+.spinner-border {
+  font-size: 12pt;
+  margin: 0 10px;
+}
 #news-component {
   /* width: 100%; */
   padding: 20px;
@@ -221,13 +227,12 @@ h3 {
   font-size: 14pt;
 }
 .article-author {
-  color: blue;
+  color: rgb(63, 63, 63);
   font-weight: bolder;
   font-size: 12pt;
 }
 .article-description {
   color: black;
-  font-weight: 400;
   font-size: 12pt;
 }
 </style>

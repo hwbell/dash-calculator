@@ -19,22 +19,25 @@
             </strong>
           </p>
 
-          <a
-            v-for="(button, ind) in navButtons"
-            v-bind:key="ind"
-            v-bind:href="button.target"
-          >
-            <button class="btn btn-sm btn-outline-secondary">
-              {{ button.text }}
-            </button>
-          </a>
-          
+          <div class="left-all-row">
+            <ScrollButton
+              v-for="(button, ind) in navButtons"
+              v-bind:key="ind"
+              v-bind:target="button.target"
+              v-bind:text="button.text"
+              customClass="btn-outline-secondary"
+            />
+          </div>
 
           <div class=""><TimeConverter /></div>
 
           <div class=""><Calculator msg="Calculator" /></div>
         </div>
       </div>
+    </div>
+
+    <div class="center-all-row fixed-bottom scroll-to-top">
+      <ScrollButton target="#app" text="back to top" customClass="btn-secondary"/>
     </div>
   </div>
 </template>
@@ -44,6 +47,7 @@ import Calculator from "./components/Calculator.vue";
 import TimeDisplay from "./components/TimeDisplay.vue";
 import TimeConverter from "./components/TimeConverter.vue";
 import News from "./components/News.vue";
+import ScrollButton from "./components/ScrollButton";
 
 export default {
   name: "App",
@@ -52,6 +56,7 @@ export default {
     TimeDisplay,
     TimeConverter,
     News,
+    ScrollButton,
   },
   data: function() {
     return {
@@ -72,6 +77,7 @@ export default {
 
 <style>
 #app {
+  position: relative;
   width: 100%;
   /* background-color: whitesmoke; */
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -79,6 +85,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
+  height: 100vh;
 }
 #content {
   /* margin: 40px; */
@@ -102,5 +109,9 @@ export default {
   margin-top: 24px;
   border-radius: 2px;
   height: 100%;
+}
+/* for the abs-positioned button near the bottom of news articles */
+.scroll-to-top {
+  padding: 20px;
 }
 </style>

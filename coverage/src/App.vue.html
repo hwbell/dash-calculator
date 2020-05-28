@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -163,7 +163,21 @@
 <a name='L104'></a><a href='#L104'>104</a>
 <a name='L105'></a><a href='#L105'>105</a>
 <a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -209,6 +223,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -220,6 +236,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -290,22 +312,25 @@
             &lt;/strong&gt;
           &lt;/p&gt;
 &nbsp;
-          &lt;a
-            v-for="(button, ind) in navButtons"
-            v-bind:key="ind"
-            v-bind:href="button.target"
-          &gt;
-            &lt;button class="btn btn-sm btn-outline-secondary"&gt;
-              {{ button.text }}
-            &lt;/button&gt;
-          &lt;/a&gt;
-          
+          &lt;div class="left-all-row"&gt;
+            &lt;ScrollButton
+              v-for="(button, ind) in navButtons"
+              v-bind:key="ind"
+              v-bind:target="button.target"
+              v-bind:text="button.text"
+              customClass="btn-outline-secondary"
+            /&gt;
+          &lt;/div&gt;
 &nbsp;
           &lt;div class=""&gt;&lt;TimeConverter /&gt;&lt;/div&gt;
 &nbsp;
           &lt;div class=""&gt;&lt;Calculator msg="Calculator" /&gt;&lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
+    &lt;/div&gt;
+&nbsp;
+    &lt;div class="center-all-row fixed-bottom scroll-to-top"&gt;
+      &lt;ScrollButton target="#app" text="back to top" customClass="btn-secondary"/&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/template&gt;
@@ -315,6 +340,7 @@ import Calculator from "./components/Calculator.vue";
 import TimeDisplay from "./components/TimeDisplay.vue";
 import TimeConverter from "./components/TimeConverter.vue";
 import News from "./components/News.vue";
+import ScrollButton from "./components/ScrollButton";
 &nbsp;
 export default {
   name: "App",
@@ -323,6 +349,7 @@ export default {
     TimeDisplay,
     TimeConverter,
     News,
+    ScrollButton,
   },
   data: function() {
     return {
@@ -343,6 +370,7 @@ export default {
 &nbsp;
 &lt;style&gt;
 #app {
+  position: relative;
   width: 100%;
   /* background-color: whitesmoke; */
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -350,6 +378,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
+  height: 100vh;
 }
 #content {
   /* margin: 40px; */
@@ -374,6 +403,10 @@ export default {
   border-radius: 2px;
   height: 100%;
 }
+/* for the abs-positioned button near the bottom of news articles */
+.scroll-to-top {
+  padding: 20px;
+}
 &lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -382,7 +415,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 28 2020 10:11:36 GMT-0600 (Mountain Daylight Time)
+                at Thu May 28 2020 15:26:33 GMT-0600 (Mountain Daylight Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
