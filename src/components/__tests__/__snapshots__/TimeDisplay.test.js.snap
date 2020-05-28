@@ -2,7 +2,7 @@
 
 exports[`TimeDisplay renders correctly 1`] = `
 <div
-  class="time-display-component"
+  id="time-display-component"
 >
   <div
     class="space-all-row"
@@ -31,7 +31,7 @@ exports[`TimeDisplay renders correctly 1`] = `
         <span
           class="time-hours"
         >
-          7:42 am
+          10:11 am
         </span>
       </span>
     </div>

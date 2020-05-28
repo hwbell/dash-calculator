@@ -1,5 +1,5 @@
 <template>
-  <div class="time-display-component">
+  <div id="time-display-component">
     <div class="space-all-row" id="current-time">
       <div class="app-title left-all-row">
         <img
@@ -74,7 +74,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.time-display-component {
+#time-display-component {
   display: flex;
   flex-direction: column;
   justify-content: center;

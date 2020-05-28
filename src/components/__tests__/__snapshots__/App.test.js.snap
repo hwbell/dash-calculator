@@ -1,0 +1,549 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<div
+  id="app"
+>
+  <div
+    id="content"
+  >
+    <div
+      class="space-all-row fixed-top"
+    >
+      <div
+        id="time-display"
+      >
+        <div
+          id="time-display-component"
+          showtime="true"
+        >
+          <div
+            class="space-all-row"
+            id="current-time"
+          >
+            <div
+              class="app-title left-all-row"
+            >
+              <img
+                alt="Vuejs icon"
+                id="vue-image"
+                src="../assets/images/vuejs.png"
+              />
+               
+              <strong>
+                uejs Dashboard
+              </strong>
+            </div>
+             
+            <div>
+              <span
+                class="time-date"
+              >
+                
+        May 28th 2020, 
+                <span
+                  class="time-hours"
+                >
+                  10:11 am
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="row"
+      style="margin-top: 60px;"
+    >
+      <div
+        class="col-sm-12 col-md-8"
+      >
+        <div
+          id="news-component"
+        >
+          <div
+            class="news-articles-holder left-all-col"
+          >
+            <div
+              style="width: 100%;"
+            >
+              <div
+                class="left-all-row"
+                style="width: 100%;"
+              >
+                <p
+                  style="margin: 0px 10px 0px 0px;"
+                >
+                  <strong>
+                    Top News since
+            
+                    <strong
+                      style="color: rgb(0, 123, 255);"
+                    >
+                      2020-05-21
+                    </strong>
+                  </strong>
+                </p>
+                 
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                >
+                  
+          last day
+        
+                </button>
+                 
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                >
+                  
+          last week
+        
+                </button>
+                 
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                >
+                  
+          last month
+        
+                </button>
+              </div>
+               
+              <div
+                class="left-all-row"
+              >
+                <input
+                  class="search-input"
+                  type="text"
+                />
+                 
+                <button
+                  class="btn btn-sm btn-primary"
+                >
+                  
+          search
+        
+                </button>
+                 
+                <div
+                  class="spinner-border text-primary"
+                  role="status"
+                >
+                  <span
+                    class="sr-only"
+                  >
+                    Loading...
+                  </span>
+                </div>
+              </div>
+            </div>
+             
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="col-sm-12 col-md-4 shadow-card"
+        id="tools"
+      >
+        <span
+          id="time-converter"
+        />
+         
+        <p
+          style="margin: 10px 0px;"
+        >
+          <strong>
+            
+            Your Dashboard Tools
+          
+          </strong>
+        </p>
+         
+        <a
+          href="#calculator"
+        >
+          <button
+            class="btn btn-sm btn-outline-secondary"
+          >
+            
+            calculator
+          
+          </button>
+        </a>
+        <a
+          href="#time-converter"
+        >
+          <button
+            class="btn btn-sm btn-outline-secondary"
+          >
+            
+            time converter
+          
+          </button>
+        </a>
+         
+        <div>
+          <div
+            class="top-left-all-col"
+            id="time-converter-component"
+          >
+            <h4>
+              Time Converter
+            </h4>
+             
+            <div
+              class="space-all-row row"
+              id="current-unix-time"
+            >
+              <div
+                class="left-all-col"
+              >
+                <p
+                  style="margin: 0px;"
+                >
+                  <strong>
+                    Unix Timestamp:
+                  </strong>
+                </p>
+                 
+                <input
+                  class="unix-time-input"
+                  type="text"
+                />
+                 
+                <button
+                  class="btn btn-sm btn-primary"
+                >
+                  
+        sync time & date
+      
+                </button>
+              </div>
+            </div>
+             
+            <hr />
+             
+            <div
+              class="space-all-row row"
+              id="current-verbal-time"
+            >
+              <div
+                class="left-all-col"
+              >
+                <p
+                  style="margin: 0px;"
+                >
+                  <strong>
+                    Time & Date:
+                  </strong>
+                </p>
+                 
+                <div
+                  class="row"
+                  style="margin-right: 20px;"
+                >
+                  <div
+                    class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
+                  >
+                    <p
+                      style="margin: 0px; font-size: 10pt;"
+                    >
+                      <strong>
+                        Month
+                      </strong>
+                    </p>
+                     
+                    <input
+                      class="regular-time-input"
+                      name="Month"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
+                  >
+                    <p
+                      style="margin: 0px; font-size: 10pt;"
+                    >
+                      <strong>
+                        Day
+                      </strong>
+                    </p>
+                     
+                    <input
+                      class="regular-time-input"
+                      name="Day"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
+                  >
+                    <p
+                      style="margin: 0px; font-size: 10pt;"
+                    >
+                      <strong>
+                        Year
+                      </strong>
+                    </p>
+                     
+                    <input
+                      class="regular-time-input"
+                      name="Year"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
+                  >
+                    <p
+                      style="margin: 0px; font-size: 10pt;"
+                    >
+                      <strong>
+                        Hour
+                      </strong>
+                    </p>
+                     
+                    <input
+                      class="regular-time-input"
+                      name="Hour"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
+                  >
+                    <p
+                      style="margin: 0px; font-size: 10pt;"
+                    >
+                      <strong>
+                        Minute
+                      </strong>
+                    </p>
+                     
+                    <input
+                      class="regular-time-input"
+                      name="Minute"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="time-input-holder col-xs-12 col-sm-4 col-md-6 col-lg-4"
+                  >
+                    <p
+                      style="margin: 0px; font-size: 10pt;"
+                    >
+                      <strong>
+                        Second
+                      </strong>
+                    </p>
+                     
+                    <input
+                      class="regular-time-input"
+                      name="Second"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                 
+                <span
+                  id="calculator"
+                />
+                 
+                <button
+                  class="btn btn-sm btn-primary"
+                >
+                  
+        sync unix timestamp
+      
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div>
+          <div
+            id="calculator-component"
+          >
+            <h4>
+              Calculator
+            </h4>
+             
+            <div
+              class="expression-window"
+            >
+              <div
+                class="expression-text"
+              >
+                0 
+              </div>
+               
+              <!---->
+            </div>
+             
+            <div
+              class="calculator-buttons"
+            >
+              <div>
+                <button
+                  class="calculator-button btn btn-secondary"
+                >
+                  
+         (
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-secondary"
+                >
+                  
+        ) 
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-secondary"
+                >
+                  
+         % 
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-secondary"
+                >
+                  
+        CE
+      
+                </button>
+              </div>
+              <div>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        7
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        8
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        9
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-secondary"
+                >
+                  
+         / 
+      
+                </button>
+              </div>
+              <div>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        4
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        5
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        6
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-secondary"
+                >
+                  
+         x 
+      
+                </button>
+              </div>
+              <div>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        1
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        2
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        3
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-secondary"
+                >
+                  
+         - 
+      
+                </button>
+              </div>
+              <div>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        0
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-light"
+                >
+                  
+        .
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-primary"
+                >
+                  
+        =
+      
+                </button>
+                <button
+                  class="calculator-button btn btn-secondary"
+                >
+                  
+         + 
+      
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

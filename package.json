@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "env-cmd -f ./.env.local jest --watch"
+    "test": "env-cmd -f ./.env.local jest --watch",
+    "start": "node server.js"
   },
   "dependencies": {
     "babel-preset-env": "^1.7.0",
@@ -14,6 +15,7 @@
     "bootstrap-vue": "^2.14.0",
     "core-js": "^3.6.5",
     "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
     "moment": "^2.26.0",
     "newsapi": "^2.4.0",
     "node-fetch": "^2.6.0",

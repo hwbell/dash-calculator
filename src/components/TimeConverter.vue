@@ -1,5 +1,5 @@
 <template>
-  <div class="time-converter-component top-left-all-col">
+  <div id="time-converter-component" class="top-left-all-col">
     <h4>Time Converter</h4>
 
     <div id="current-unix-time" class="space-all-row row">
@@ -197,7 +197,7 @@ h4 {
 .btn {
   margin: 10px 0;
 }
-.time-converter-component {
+#time-converter-component {
   background-color: white;
   margin: 10px 0;
   padding: 10px;

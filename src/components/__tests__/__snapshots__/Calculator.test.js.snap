@@ -2,7 +2,7 @@
 
 exports[`Calculator renders correctly 1`] = `
 <div
-  class="calculator"
+  id="calculator-component"
 >
   <h4>
     Calculator

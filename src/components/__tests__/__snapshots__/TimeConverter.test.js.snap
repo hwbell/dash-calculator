@@ -2,7 +2,8 @@
 
 exports[`TimeConverter renders correctly 1`] = `
 <div
-  class="time-converter-component top-left-all-col"
+  class="top-left-all-col"
+  id="time-converter-component"
 >
   <h4>
     Time Converter

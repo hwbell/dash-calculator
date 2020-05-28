@@ -1,5 +1,5 @@
 <template>
-  <div class="calculator">
+  <div id="calculator-component">
     <h4>Calculator</h4>
 
     <ExpressionWindow
@@ -197,7 +197,7 @@ export default {
 h4 {
   color: rgb(0, 123, 255);
 }
-.calculator {
+#calculator-component {
   background-color: white;
   margin: 10px 0;
   padding: 10px;

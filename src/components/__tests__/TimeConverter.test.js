@@ -19,7 +19,7 @@ describe('TimeConverter', () => {
   })
   
   test('renders a button for each object in the array map', () => {
-    expect(wrapper.findAll('.time-converter-component').length).toBe(1);
+    expect(wrapper.findAll('#time-converter-component').length).toBe(1);
     expect(wrapper.findAll('#current-unix-time').length).toBe(1);
     expect(wrapper.findAll('#current-verbal-time').length).toBe(1);
   })

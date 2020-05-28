@@ -42,6 +42,9 @@ export default {
 .expression-text {
   transition: all 0.3s ease;
 }
+.evaluated {
+  transform: translateY(-10px);
+}
 .alert-text {
   /* font-weight: bolder; */
   transform: translateY(-6px);
