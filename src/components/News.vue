@@ -141,6 +141,7 @@ export default {
 
       let headers = {
         Authorization: process.env.VUE_APP_NEWSAPIKEY,
+        'Access-Control-Allow-Origin': '*'
       };
       this.loading = true;
 
