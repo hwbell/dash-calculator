@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article renders correctly 1`] = `
+<div
+  class="article-component shadow-card"
+>
+  <div
+    class="space-all-row"
+  >
+    <div
+      class="left-all-col"
+    >
+      <p
+        class="article-title"
+      >
+        U.S. Memorial Day crowds small, subdued amid coronavirus pandemic - Global News
+      </p>
+       
+      <p>
+        2020-05-25
+      </p>
+    </div>
+     
+    <img
+      alt="article image"
+      class="article-image"
+      src="https://shawglobalnews.files.wordpress.com/2020/05/1000-32.jpeg?quality=70&strip=all&w=720&h=379&crop=1"
+    />
+  </div>
+   
+  <p>
+    <span
+      class="article-author"
+    >
+      Curt Anderson And Brian Mahoney, 
+    </span>
+    <span>
+       from Global News
+    </span>
+  </p>
+   
+  <p
+    class="article-description"
+  >
+    <span>
+      Americans settled for small processions and online tributes instead of parades Monday as they observed Memorial Day in the shadow of the pandemic, which forced communities to honour the nation’s mili… 
+    </span>
+  </p>
+   
+  <a
+    alt="article link"
+    href="http://globalnews.ca/news/6981600/coronavirus-memorial-day-warnings/"
+    target="_blank"
+  >
+       read full article
+  </a>
+</div>
+`;

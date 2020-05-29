@@ -6,7 +6,7 @@ exports[`ScrollButton renders correctly 1`] = `
 >
   <a>
     <button
-      class="btn btn-sm btn-light"
+      class="btn btn-sm btn-primary"
     >
       
       

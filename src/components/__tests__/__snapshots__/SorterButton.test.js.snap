@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SorterButton renders correctly 1`] = `
+<div
+  class="sorter-button-component"
+>
+  <button
+    class="btn btn-sm btn-outline-primary"
+  >
+    
+      last day
+    
+  </button>
+</div>
+`;

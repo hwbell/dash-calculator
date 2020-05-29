@@ -2,6 +2,7 @@
   <div id="news-component">
     <div v-if="articles != null" class="news-articles-holder left-all-col">
       <div style="width: 100%">
+        <!-- title and sorters -->
         <div class="left-all-row" style="width: 100%">
           <p style="margin: 0px 10px 0 0">
             <strong
@@ -9,26 +10,17 @@
               <strong style="color: #007bff">{{ sorter }}</strong>
             </strong>
           </p>
-          <button
-            @click="sortArticles(lastDay)"
-            class="btn btn-sm btn-outline-primary"
-          >
-            last day
-          </button>
-          <button
-            @click="sortArticles(lastWeek)"
-            class="btn btn-sm btn-outline-primary"
-          >
-            last week
-          </button>
-          <button
-            @click="sortArticles(lastMonth)"
-            class="btn btn-sm btn-outline-primary"
-          >
-            last month
-          </button>
+
+          <SorterButton
+            v-for="(button, ind) in sorterButtons"
+            v-bind:key="ind"
+            :sort="sortArticles"
+            :text="button.text"
+            :sorter="button.sorter"
+          />
         </div>
 
+        <!-- search input -->
         <div class="left-all-row">
           <input
             class="search-input"
@@ -39,60 +31,36 @@
           <button @click="fireSearch()" class="btn btn-sm btn-primary">
             search
           </button>
-          <div v-if="loading" class="spinner-border text-primary" role="status">
-          </div>
+          <div
+            v-if="loading"
+            class="spinner-border text-primary"
+            role="status"
+          ></div>
         </div>
       </div>
 
-      <div
-        v-for="(article, ind) in articles"
-        v-bind:key="ind"
-        class="news-article shadow-card"
-      >
-        <div class="space-all-row">
-          <div class="left-all-col">
-            <p class="article-title">{{ article.title }}</p>
-            <p>{{ article.publishedAt.slice(0, 10) }}</p>
-          </div>
-          <img
-            class="article-image"
-            v-bind:src="article.urlToImage"
-            alt="article image"
-          />
-        </div>
-        <p>
-          <span class="article-author" v-if="article.author">{{ article.author }}, </span
-          ><span v-if="article.source.name">
-            from {{ article.source.name }}</span
-          >
-        </p>
-        <p v-if="article.content" class="article-description">
-          <span>{{ article.content.slice(0, -(article.content.length-article.content.indexOf('['))) }}</span>
-        </p>
-        <a v-bind:href="article.url" target="_blank" alt="article link"
-          >&nbsp;&nbsp;&nbsp;read full article</a
-        >
-      </div>
+      <!-- the articles -->
+      <Article v-for="(article, ind) in articles" v-bind:key="ind" :article="article"/>
     </div>
   </div>
 </template>
 
 <script>
-// import { fetchArticles } from "../tools/newsapi";
+import SorterButton from "./SorterButton";
+import Article from "./Article";
 
 export default {
   name: "News",
   // props: {
   // msg: String,
   // },
-  // components: {ExpressionWindow},
+  components: { SorterButton, Article },
   data: function() {
     const moment = require("moment");
     let today = moment().format("YYYY-MM-DD");
     let lastDay = moment()
       .subtract(1, "d")
       .format("YYYY-MM-DD");
-
     let lastWeek = moment()
       .subtract(7, "d")
       .format("YYYY-MM-DD");
@@ -110,6 +78,20 @@ export default {
       lastDay,
       lastWeek,
       lastMonth,
+      sorterButtons: [
+        {
+          sorter: lastDay,
+          text: "last day",
+        },
+        {
+          sorter: lastWeek,
+          text: "last week",
+        },
+        {
+          sorter: lastMonth,
+          text: "last month",
+        },
+      ],
     };
   },
   created: function() {
@@ -140,7 +122,7 @@ export default {
 
       let headers = {
         Authorization: process.env.VUE_APP_NEWSAPIKEY,
-        'Access-Control-Allow-Origin': '*'
+        "Access-Control-Allow-Origin": "*",
       };
       this.loading = true;
 
@@ -164,6 +146,7 @@ export default {
       return serverResponse;
     },
     sortArticles: async function(sorter) {
+      console.log(sorter);
       this.loading = true;
       this.sorter = sorter;
       console.log(`re-fetching articles since ${sorter}`);
@@ -207,32 +190,5 @@ a {
   border-radius: 4px;
   margin: 10px 0;
   border: 1px solid rgb(170, 170, 170);
-}
-.news-article {
-  background-color: white;
-  width: 100%;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 2px;
-  /* border: 1px solid rgb(207, 206, 206); */
-}
-.article-image {
-  /* width: 100px; */
-  height: 100px;
-  border-radius: 10px;
-}
-.article-title {
-  color: black;
-  font-weight: bolder;
-  font-size: 14pt;
-}
-.article-author {
-  color: rgb(63, 63, 63);
-  font-weight: bolder;
-  font-size: 12pt;
-}
-.article-description {
-  color: black;
-  font-size: 12pt;
 }
 </style>

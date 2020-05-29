@@ -3,7 +3,7 @@
     <div id="content">
       <div class="space-all-row fixed-top">
         <div id="time-display">
-          <TimeDisplay v-bind:showTime="true" />
+          <TimeDisplay :timeDate="timeDate" :timeHours="timeHours" v-bind:showTime="true" />
         </div>
       </div>
 
@@ -37,7 +37,11 @@
     </div>
 
     <div class="center-all-row fixed-bottom scroll-to-top">
-      <ScrollButton target="#app" text="back to top" customClass="btn-secondary"/>
+      <ScrollButton
+        target="#app"
+        text="back to top"
+        customClass="btn-secondary"
+      />
     </div>
   </div>
 </template>
@@ -58,8 +62,21 @@ export default {
     News,
     ScrollButton,
   },
+  created: function() {
+    const moment = require("moment");
+
+    this.timeDate = moment().format("MMMM Do YYYY");
+    this.timeHours = moment().format("h:mm a");
+
+    setInterval(() => {
+      this.timeDate = moment().format("MMMM Do YYYY");
+      this.timeHours = moment().format("h:mm a");
+    }, 60000);
+  },
   data: function() {
     return {
+      timeDate: "",
+      timeHours: "",
       navButtons: [
         {
           text: "calculator",

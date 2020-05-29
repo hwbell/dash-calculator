@@ -26,9 +26,9 @@ export default {
 .scroll-button-component {
   margin: 4px;
 }
-.btn-secondary {
+.btn-sm {
   margin: 4px 0 4px 0;
   font-weight: bolder;
-  width: 140px;
+  /* width: 140px; */
 }
 </style>

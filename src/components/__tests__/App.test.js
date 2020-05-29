@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import App from '../../App.vue'
 
 const message = 'This is a base component for us to start with!';
@@ -7,7 +7,7 @@ describe('App', () => {
 
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(App)
+    wrapper = shallowMount(App)
   })
 
   test('is a Vue instance', () => {
@@ -19,6 +19,8 @@ describe('App', () => {
   })
   
   test('renders the correct elements', () => {
+    wrapper = mount(App)
+    
     expect(wrapper.findAll('#app').length).toBe(1)
     expect(wrapper.findAll('#content').length).toBe(1)
     expect(wrapper.findAll('#news-component').length).toBe(1)

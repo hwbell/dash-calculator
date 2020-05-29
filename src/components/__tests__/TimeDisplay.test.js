@@ -2,41 +2,37 @@ import { mount } from '@vue/test-utils'
 import TimeDisplay from '../TimeDisplay.vue'
 import Vue from 'vue';
 
-const message = 'This is a TimeDisplay component for us to start with!';
+const moment = require('moment');
+const date = moment().format("YYYY-MM-DD");
+const hours = moment().format("hh:mm a");
 
 describe('TimeDisplay', () => {
 
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(TimeDisplay)
+    wrapper = mount(TimeDisplay, {
+      propsData: {
+        timeDate: date,
+        timeHours: hours
+      }
+    })
   })
 
   test('is a Vue instance', () => {
-    const wrapper = mount(TimeDisplay)
-    // expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
   test('renders correctly', () => {
-    const wrapper = mount(TimeDisplay)
     expect(wrapper.element).toMatchSnapshot()
   })
 
   test('renders the right components', async () => {
-    const wrapper = mount(TimeDisplay)
-
     expect(wrapper.findAll('#time-display-component').length).toBe(1)
     expect(wrapper.findAll('#current-time').length).toBe(1)
-
+    expect(wrapper.findAll('.time-date').length).toBe(1)
+    await Vue.nextTick()
+    expect(wrapper.find('.time-date').text()).toBe(`${date}, ${hours}`)
 
   })
 
-  // test(`assigns the computed value on the component properly`, () => {
-  //   let revMessage = message.split('').reverse().join('');
-  //   expect(wrapper.vm.reversedMessage).toBe(revMessage);
-  // })
-
-  // test('should change the message when the greet method is called', () => {
-  //   wrapper.vm.greet();
-  //   expect(wrapper.vm.message).toBe('Nice to meet you!');
-  // })
 })

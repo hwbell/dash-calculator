@@ -69,7 +69,7 @@ describe('News', () => {
   test(`renders an article for each result`, async () => {
     expect(wrapper.vm.articles.length).toBe(2)
 
-    expect(wrapper.findAll('.news-article').length).toBe(2)
+    expect(wrapper.findAll('.article-component').length).toBe(2)
   })  
 
 })

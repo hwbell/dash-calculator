@@ -23,34 +23,44 @@ exports[`News renders correctly 1`] = `
             <strong
               style="color: rgb(0, 123, 255);"
             >
-              2020-05-21
+              2020-05-22
             </strong>
           </strong>
         </p>
          
-        <button
-          class="btn btn-sm btn-outline-primary"
+        <div
+          class="sorter-button-component"
         >
-          
-          last day
-        
-        </button>
-         
-        <button
-          class="btn btn-sm btn-outline-primary"
+          <button
+            class="btn btn-sm btn-outline-primary"
+          >
+            
+      last day
+    
+          </button>
+        </div>
+        <div
+          class="sorter-button-component"
         >
-          
-          last week
-        
-        </button>
-         
-        <button
-          class="btn btn-sm btn-outline-primary"
+          <button
+            class="btn btn-sm btn-outline-primary"
+          >
+            
+      last week
+    
+          </button>
+        </div>
+        <div
+          class="sorter-button-component"
         >
-          
-          last month
-        
-        </button>
+          <button
+            class="btn btn-sm btn-outline-primary"
+          >
+            
+      last month
+    
+          </button>
+        </div>
       </div>
        
       <div
@@ -72,18 +82,12 @@ exports[`News renders correctly 1`] = `
         <div
           class="spinner-border text-primary"
           role="status"
-        >
-          <span
-            class="sr-only"
-          >
-            Loading...
-          </span>
-        </div>
+        />
       </div>
     </div>
      
     <div
-      class="news-article shadow-card"
+      class="article-component shadow-card"
     >
       <div
         class="space-all-row"
@@ -109,15 +113,14 @@ exports[`News renders correctly 1`] = `
         />
       </div>
        
-      <p
-        class="article-author"
-      >
-        <span>
+      <p>
+        <span
+          class="article-author"
+        >
           Joey Roulette, 
         </span>
         <span>
-          
-          from TheChronicleHerald.ca
+           from TheChronicleHerald.ca
         </span>
       </p>
        
@@ -139,7 +142,7 @@ CAPE CANAVERAL, Fla. (Reuters) - Entrepreneur Elon Musk's SpaceX is set to launc
       </a>
     </div>
     <div
-      class="news-article shadow-card"
+      class="article-component shadow-card"
     >
       <div
         class="space-all-row"
@@ -165,15 +168,14 @@ CAPE CANAVERAL, Fla. (Reuters) - Entrepreneur Elon Musk's SpaceX is set to launc
         />
       </div>
        
-      <p
-        class="article-author"
-      >
-        <span>
+      <p>
+        <span
+          class="article-author"
+        >
           Curt Anderson And Brian Mahoney, 
         </span>
         <span>
-          
-          from Global News
+           from Global News
         </span>
       </p>
        
