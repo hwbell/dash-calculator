@@ -40,7 +40,11 @@
       </div>
 
       <!-- the articles -->
-      <Article v-for="(article, ind) in articles" v-bind:key="ind" :article="article"/>
+      <Article
+        v-for="(article, ind) in articles"
+        v-bind:key="ind"
+        :article="article"
+      />
     </div>
   </div>
 </template>
@@ -71,6 +75,7 @@ export default {
     return {
       loading: true,
       searchQuery: "covid-19",
+      articleType: "everything",
       sorter: lastWeek,
       message: "This is a news component for us to start with!",
       articles: [],
@@ -108,8 +113,9 @@ export default {
       let serverResponse;
 
       // construct the url with the query and to / from dates
-      const searchUrl = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${query}&from=${fromDate}&to=${this.today}`;
+      const searchUrl = `https://newsapi.org/v2/${this.articleType}?q=${query}&from=${fromDate}&to=${this.today}`;
 
+      // console.log(serverResponse)
       // check localstorage first
       if (Boolean(localStorage.getItem(searchUrl)) === true) {
         console.log(`found news search for ${searchUrl} in local storage`);
@@ -120,18 +126,18 @@ export default {
         return serverResponse;
       }
 
-      let headers = {
-        Authorization: process.env.VUE_APP_NEWSAPIKEY,
-        "Access-Control-Allow-Origin": "*",
-      };
       this.loading = true;
 
-      serverResponse = await fetch(searchUrl, {
-        method: "GET",
-        headers,
+      // now send off to our backend to route to the actual newsapi.org api
+      let info = { url: searchUrl };
+      serverResponse = await fetch(process.env.VUE_APP_NEWS_PROXY_SERVER, {
+        method: "POST",
+        body: JSON.stringify(info),
+        headers: { "Content-Type": "application/json" }, // this is important here! express does not automate this with app.use(express.json)
       })
         .then((response) => response.json())
         .then((response) => {
+          console.log(response);
           return response;
         })
         .catch((err) => console.log(err));
