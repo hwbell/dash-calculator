@@ -9,12 +9,17 @@
     />
 
     <div class="calculator-buttons">
-      <div class="" v-for="(buttonrow, ind) in buttons" v-bind:key="ind">
+      <div
+        v-for="(buttonrow, rowInd) in buttons"
+        v-bind:key="rowInd + 1"
+        :id="`calculator-button-row-${rowInd + 1}`"
+      >
         <button
-          v-for="(button, ind) in buttonrow"
-          v-bind:key="ind"
+          v-for="(button, buttonInd) in buttonrow"
+          v-bind:key="buttonInd"
           class="calculator-button btn"
           :class="!!button.class ? 'btn-' + button.class : 'btn-light'"
+          :id="`calculator-button-${rowInd}-${buttonInd}`"
           v-on:click="modifyExpression(button)"
         >
           {{ button.text }}
@@ -168,12 +173,12 @@ export default {
       try {
         let expressionString = this.currentExpressionMath.join("");
         this.currentAnswer = eval(expressionString);
-      } catch(e) {
+      } catch (e) {
         console.log(e);
         this.alertSwitch = true;
         setTimeout(() => {
           this.alertSwitch = false;
-        }, 300)
+        }, 300);
       }
     },
   },
@@ -185,7 +190,6 @@ export default {
         return "0";
       } else {
         return this.currentExpressionText.join("");
-
       }
     },
   },

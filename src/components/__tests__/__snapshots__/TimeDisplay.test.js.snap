@@ -27,11 +27,11 @@ exports[`TimeDisplay renders correctly 1`] = `
         class="time-date"
       >
         
-        2020-05-29, 
+        2020-06-04, 
         <span
           class="time-hours"
         >
-          02:28 pm
+          03:00 pm
         </span>
       </span>
     </div>

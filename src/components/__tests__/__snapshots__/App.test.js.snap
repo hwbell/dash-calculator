@@ -15,8 +15,8 @@ exports[`App renders correctly 1`] = `
       >
         <timedisplay-stub
           showtime="true"
-          timedate="May 29th 2020"
-          timehours="2:28 pm"
+          timedate="June 4th 2020"
+          timehours="3:00 pm"
         />
       </div>
     </div>

@@ -19,8 +19,29 @@ export default {
   name: "TimeDisplay",
   props: {
     timeDate: String,
-    timeHours: String
+    timeHours: String,
   },
+  // created: function() {
+  //   //do we support geolocation
+  //   if(!("geolocation" in navigator)) {
+  //     this.errorStr = 'Geolocation is not available.';
+  //     return;
+  //   }
+
+  //   this.gettingLocation = true;
+  //   // get position
+  //   navigator.geolocation.getCurrentPosition(pos => {
+  //     this.gettingLocation = false;
+  //     this.location = pos;
+  //     console.log('position registered')
+  //     console.log(pos)
+  //   }, err => {
+  //     console.log('something went wrong')
+  //     console.log(err)
+  //     this.gettingLocation = false;
+  //     this.errorStr = err.message;
+  //   })
+  // }
 };
 </script>
 
