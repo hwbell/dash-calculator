@@ -3,12 +3,17 @@
     <div id="content">
       <div class="space-all-row fixed-top">
         <div id="time-display">
-          <TimeDisplay :timeDate="timeDate" :timeHours="timeHours" v-bind:showTime="true" />
+          <TimeDisplay
+            :timeDate="timeDate"
+            :timeHours="timeHours"
+            v-bind:showTime="true"
+          />
         </div>
       </div>
 
-      <div class="row" style="margin-top: 60px">
+      <div style="margin-top: 60px" class="row">
         <div class="col-sm-12 col-md-8">
+          <Weather />
           <News />
         </div>
         <div id="tools" class="col-sm-12 col-md-4 shadow-card">
@@ -52,6 +57,7 @@ import TimeDisplay from "./components/TimeDisplay.vue";
 import TimeConverter from "./components/TimeConverter.vue";
 import News from "./components/News.vue";
 import ScrollButton from "./components/ScrollButton";
+import Weather from "./components/Weather";
 
 export default {
   name: "App",
@@ -61,6 +67,7 @@ export default {
     TimeConverter,
     News,
     ScrollButton,
+    Weather,
   },
   created: function() {
     const moment = require("moment");
