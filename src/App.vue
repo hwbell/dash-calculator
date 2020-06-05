@@ -115,7 +115,8 @@ export default {
 }
 #time-display {
   width: 100%;
-  margin: 20px;
+  margin: 0;
+  padding: 14px;
 }
 .fixed-top {
   /* padding: 10px 0; */
