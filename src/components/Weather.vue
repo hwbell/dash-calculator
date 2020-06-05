@@ -38,7 +38,8 @@ export default {
     // get the weather for boston ma. Would ask for geolocation but people looking at this will be in Boston too, so ?
     // proxy the darksky fetch through our node.js backend
     const { lat, long } = this.coords;
-    const proxyUrl = `${process.env.VUE_APP_WEATHER_PROXY_SERVER}${lat}/${long}`;
+    const proxyUrl = `${process.env.VUE_APP_WEATHER_PROXY_SERVER}/${lat}/${long}`;
+    console.log(proxyUrl)
     let serverResponse = await fetch(proxyUrl, {
       method: "GET",
       headers: { "Content-Type": "application/json" }, // this is important here! express does not automate this with app.use(express.json)
